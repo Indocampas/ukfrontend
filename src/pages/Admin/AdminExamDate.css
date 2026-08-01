@@ -1,0 +1,57 @@
+.uka-admin-examdate-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 18px 20px;
+  box-shadow: 0 8px 20px rgba(16, 26, 77, 0.07);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.uka-admin-examdate-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.uka-admin-examdate-header h3 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #101a4d;
+}
+
+.uka-admin-examdate-meta {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.uka-admin-examdate-tag {
+  font-size: 11px;
+  font-weight: 600;
+  background: #eef0f8;
+  color: #101a4d;
+  padding: 2px 10px;
+  border-radius: 20px;
+}
+
+.uka-admin-examdate-when {
+  font-size: 13px;
+  font-weight: 700;
+  color: #e8b430;
+}
+
+.uka-admin-examdate-desc {
+  font-size: 13px;
+  color: #6b7280;
+  line-height: 1.5;
+}
+
+.uka-admin-examdate-actions {
+  display: flex;
+  gap: 8px;
+  border-top: 1px solid #eef0f8;
+  padding-top: 12px;
+}

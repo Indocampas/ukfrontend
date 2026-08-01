@@ -1,0 +1,187 @@
+.visionmission-uka-section {
+  font-family: "Roboto", "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #0a1330, #1a2a4a);
+  padding: 90px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.visionmission-uka-section::before {
+  content: "";
+  position: absolute;
+  top: -30%;
+  right: -10%;
+  width: 55%;
+  height: 160%;
+  background: radial-gradient(circle, rgba(232, 180, 48, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.visionmission-uka-container {
+  max-width: 1180px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.visionmission-uka-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 46px;
+}
+
+.visionmission-uka-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(232, 180, 48, 0.15);
+  color: #e8b430;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  margin-bottom: 16px;
+}
+
+.visionmission-uka-header h2 {
+  font-size: 32px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 12px;
+}
+
+.visionmission-uka-header p {
+  font-size: 15px;
+  color: #d9deee;
+  margin: 0;
+}
+
+.visionmission-uka-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+.visionmission-uka-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  padding: 36px 32px;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: all 0.3s ease;
+}
+
+.visionmission-uka-grid.animate-in .visionmission-uka-card {
+  animation: visionMissionReveal 0.7s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+.visionmission-uka-grid.animate-in .visionmission-uka-card.mission {
+  animation-delay: 0.15s;
+}
+
+@keyframes visionMissionReveal {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.visionmission-uka-card:hover {
+  border-color: rgba(232, 180, 48, 0.3);
+  transform: translateY(-4px);
+}
+
+.visionmission-uka-card-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin-bottom: 18px;
+  background: linear-gradient(135deg, #e8b430, #f5c842);
+  color: #0a1330;
+}
+
+.visionmission-uka-card.mission .visionmission-uka-card-icon {
+  background: linear-gradient(135deg, #4caf50, #7cd382);
+  color: #0a1330;
+}
+
+.visionmission-uka-card h3 {
+  font-size: 21px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 14px;
+}
+
+.visionmission-uka-statement {
+  font-size: 14.5px;
+  line-height: 1.8;
+  color: #c7cce0;
+  margin: 0 0 22px;
+}
+
+.visionmission-uka-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.visionmission-uka-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #e7e9f2;
+}
+
+.visionmission-uka-list-icon {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  background: rgba(232, 180, 48, 0.12);
+  color: #e8b430;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  margin-top: 1px;
+}
+
+.visionmission-uka-card.mission .visionmission-uka-list-icon {
+  background: rgba(76, 175, 80, 0.15);
+  color: #7cd382;
+}
+
+@media (max-width: 900px) {
+  .visionmission-uka-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .visionmission-uka-section {
+    padding: 60px 16px;
+  }
+
+  .visionmission-uka-header h2 {
+    font-size: 26px;
+  }
+
+  .visionmission-uka-card {
+    padding: 28px 22px;
+  }
+}

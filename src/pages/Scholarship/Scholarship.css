@@ -1,0 +1,228 @@
+/* src/pages/Scholarship/Scholarship.css */
+.scholarship-uka-section {
+  background: #f8f9fc;
+  padding: 70px 0 80px;
+  font-family: "Roboto", "Segoe UI", sans-serif;
+}
+
+.scholarship-uka-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.scholarship-uka-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scholarship-uka-left.animate-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.scholarship-uka-right {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.1s, transform 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.1s;
+}
+
+.scholarship-uka-right.animate-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.scholarship-uka-right.animate-in .scholarship-uka-tier {
+  animation: scholarshipTierIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) backwards;
+}
+
+@keyframes scholarshipTierIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.scholarship-uka-tier {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.scholarship-uka-tier:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.08);
+}
+
+.scholarship-uka-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(232, 180, 48, 0.12);
+  color: #e8b430;
+  padding: 6px 20px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+  border: 1px solid rgba(232, 180, 48, 0.2);
+}
+
+.scholarship-uka-left h2 {
+  font-size: 34px;
+  font-weight: 800;
+  color: #0a1330;
+  margin-bottom: 18px;
+  letter-spacing: -0.5px;
+}
+
+.scholarship-uka-left p {
+  color: #4b5468;
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 22px;
+  max-width: 520px;
+}
+
+.scholarship-uka-points {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.scholarship-uka-points li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #0a1330;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.scholarship-uka-points li svg {
+  color: #4CAF50;
+  flex-shrink: 0;
+}
+
+.scholarship-uka-btn {
+  background: linear-gradient(135deg, #e8b430, #f5c842);
+  color: #0a1330;
+  border: none;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.3px;
+  padding: 15px 30px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(232, 180, 48, 0.3);
+  font-family: inherit;
+}
+
+.scholarship-uka-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(232, 180, 48, 0.4);
+}
+
+.scholarship-uka-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: linear-gradient(135deg, #b0b0b0, #909090);
+  box-shadow: none;
+}
+
+.scholarship-uka-registration-status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.scholarship-uka-registration-status.open {
+  background: rgba(22, 163, 74, 0.1);
+  color: #16a34a;
+  border: 1px solid rgba(22, 163, 74, 0.2);
+}
+
+.scholarship-uka-registration-status.closed {
+  background: rgba(220, 38, 38, 0.08);
+  color: #dc2626;
+  border: 1px solid rgba(220, 38, 38, 0.15);
+}
+
+.scholarship-uka-status-icon {
+  flex-shrink: 0;
+}
+
+.scholarship-uka-right {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.scholarship-uka-tier {
+  background: #ffffff;
+  border-left: 5px solid #e8b430;
+  border-radius: 10px;
+  padding: 18px 22px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 4px 16px rgba(10, 19, 48, 0.06);
+  transition: transform 0.3s ease;
+}
+
+.scholarship-uka-tier:hover {
+  transform: translateX(6px);
+}
+
+.scholarship-uka-percent {
+  font-size: 30px;
+  font-weight: 800;
+  min-width: 78px;
+}
+
+.scholarship-uka-label {
+  font-size: 12px;
+  color: #9aa1b4;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 2px;
+}
+
+.scholarship-uka-marks {
+  font-size: 15px;
+  color: #0a1330;
+  font-weight: 600;
+}
+
+@media (max-width: 980px) {
+  .scholarship-uka-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .scholarship-uka-container {
+    padding: 0 20px;
+  }
+
+  .scholarship-uka-left h2 {
+    font-size: 26px;
+  }
+}

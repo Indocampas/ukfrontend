@@ -1,0 +1,411 @@
+/* src/pages/Contact/Contact.css */
+.contact-uka-section {
+  background: #0a1330;
+  font-family: "Roboto", "Segoe UI", sans-serif;
+}
+
+.contact-uka-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 70px 40px 60px;
+}
+
+.contact-uka-header {
+  text-align: center;
+  margin-bottom: 46px;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.contact-uka-info-item p a {
+  color: #b8bdd0;          /* matches the paragraph colour */
+  text-decoration: none;    /* no underline by default */
+  transition: color 0.2s ease;
+}
+
+.contact-uka-info-item p a:hover {
+  color: #e8b430;           /* gold on hover, matches your theme */
+  text-decoration: underline;
+}
+.contact-uka-header.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contact-uka-tag {
+  display: inline-block;
+  background: rgba(232, 180, 48, 0.12);
+  color: #e8b430;
+  padding: 6px 24px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  border: 1px solid rgba(232, 180, 48, 0.2);
+}
+
+.contact-uka-header h2 {
+  font-size: 34px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 10px;
+  letter-spacing: -0.5px;
+}
+
+.contact-uka-header p {
+  color: #b8bdd0;
+  font-size: 15px;
+}
+
+.contact-uka-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 50px;
+}
+
+.contact-uka-info {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  opacity: 0;
+  transform: translateX(-24px);
+  transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.1s, transform 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.1s;
+}
+
+.contact-uka-info.animate-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.contact-uka-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.contact-uka-info-item svg {
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+  border-radius: 10px;
+  background: rgba(232, 180, 48, 0.14);
+  color: #e8b430;
+  padding: 11px;
+  box-sizing: border-box;
+}
+
+.contact-uka-info-item h4 {
+  color: #ffffff;
+  font-size: 14.5px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.contact-uka-info-item p {
+  color: #b8bdd0;
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+
+.contact-uka-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #25d366;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 13px 22px;
+  border-radius: 8px;
+  text-decoration: none;
+  margin-top: 6px;
+  width: fit-content;
+  transition: transform 0.3s ease;
+}
+
+.contact-uka-whatsapp:hover {
+  transform: translateY(-2px);
+}
+
+.contact-uka-form {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  opacity: 0;
+  transform: translateX(24px);
+  transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.15s, transform 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.15s;
+}
+
+.contact-uka-form.animate-in,
+.contact-uka-form.contact-uka-success {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.contact-uka-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.contact-uka-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.contact-uka-form-field label {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #d9deee;
+  letter-spacing: 0.3px;
+}
+
+.contact-uka-error {
+  color: #ff8a8f;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.contact-uka-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  background: rgba(220, 53, 69, 0.14);
+  border: 1px solid rgba(220, 53, 69, 0.35);
+  color: #ffb3b8;
+  padding: 12px 14px;
+  border-radius: 10px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.contact-uka-banner a {
+  color: #ffd166;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.contact-uka-banner svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.contact-uka-spinner {
+  animation: contactUkaSpin 0.8s linear infinite;
+}
+
+@keyframes contactUkaSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.contact-uka-submit:disabled {
+  opacity: 0.75;
+  cursor: not-allowed;
+}
+
+.contact-uka-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.contact-uka-success {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 50px 32px;
+}
+
+.contact-uka-success-icon {
+  font-size: 40px;
+  color: #e8b430;
+  margin-bottom: 14px;
+  background: rgba(232, 180, 48, 0.14);
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.contact-uka-success p strong {
+  color: #ffb3b8;
+}
+
+.contact-uka-success h3 {
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.contact-uka-success p {
+  color: #b8bdd0;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.contact-uka-form input,
+.contact-uka-form textarea {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  padding: 13px 16px;
+  color: #ffffff;
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+  resize: vertical;
+  transition: border-color 0.3s ease;
+}
+
+.contact-uka-form input::placeholder,
+.contact-uka-form textarea::placeholder {
+  color: #8890a8;
+}
+
+.contact-uka-form input:focus,
+.contact-uka-form textarea:focus {
+  border-color: #e8b430;
+  background: rgba(255, 255, 255, 0.09);
+  box-shadow: 0 0 0 3px rgba(232, 180, 48, 0.18);
+}
+
+.contact-uka-submit {
+  background: linear-gradient(135deg, #e8b430, #f5c842);
+  color: #0a1330;
+  border: none;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.4px;
+  padding: 14px 22px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  box-shadow: 0 4px 15px rgba(232, 180, 48, 0.3);
+}
+
+.contact-uka-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(232, 180, 48, 0.4);
+}
+
+/* Footer bar */
+.contact-uka-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 26px 40px;
+}
+
+.contact-uka-footer-inner {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.contact-uka-footer-brand {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-uka-footer-logo {
+  color: #e8b430;
+  font-weight: 800;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+}
+
+.contact-uka-footer-brand p {
+  color: #8890a8;
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+.contact-uka-socials {
+  display: flex;
+  gap: 12px;
+}
+
+.contact-uka-socials a {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #e7e9f2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.contact-uka-socials a:hover {
+  background: #e8b430;
+  color: #0a1330;
+  border-color: #e8b430;
+}
+
+.contact-uka-copyright {
+  max-width: 1300px;
+  margin: 0 auto;
+  text-align: center;
+  color: #6c7391;
+  font-size: 12px;
+}
+
+@media (max-width: 900px) {
+  .contact-uka-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Below 1100px the Hero's floating side-actions become a bar fixed to
+   the bottom of the viewport (see Hero.css). Add matching bottom
+   padding here so it never covers the footer's content or links. */
+@media (max-width: 1100px) {
+  .contact-uka-footer {
+    padding-bottom: 76px;
+  }
+}
+
+@media (max-width: 700px) {
+  .contact-uka-container {
+    padding: 50px 20px 40px;
+  }
+
+  .contact-uka-footer {
+    padding: 24px 20px;
+  }
+
+  .contact-uka-header h2 {
+    font-size: 26px;
+  }
+
+  .contact-uka-form-row {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,586 @@
+/* src/components/Navbar/Navbar.css */
+
+.uka-navbar {
+  font-family: "Roboto", "Segoe UI", sans-serif;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(6, 12, 41, 0.95);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  height: 78px;
+}
+
+.uka-navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 40px;
+  max-width: 1500px;
+  margin: 0 auto;
+  height: 100%;
+}
+
+.uka-logo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.uka-logo-image {
+  width: 65px !important;  
+  height: 65px !important; 
+  object-fit: contain;
+  border-radius: 12px;
+  flex-shrink: 0;
+  background: rgba(232, 180, 48, 0.06);
+  padding: 6px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 12px rgba(232, 180, 48, 0.12);
+  border: 1px solid rgba(232, 180, 48, 0.08);
+}
+
+.uka-logo:hover .uka-logo-image {
+  transform: scale(1.08);
+  box-shadow: 0 4px 20px rgba(232, 180, 48, 0.2);
+}
+
+.uka-logo-badge {
+  display: none !important;
+}
+
+.uka-logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.uka-logo-title {
+  color: #e8b430;
+  font-weight: 800;
+  font-size: 21px;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 4px rgba(232, 180, 48, 0.1);
+}
+
+.uka-logo-subtitle {
+  color: #d9deee;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+.uka-nav-links {
+  display: flex;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+
+.uka-nav-links a {
+  color: #e7e9f2;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  padding-bottom: 6px;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+  position: relative;
+  white-space: nowrap;
+}
+
+.uka-nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #e8b430;
+  transition: width 0.3s ease;
+}
+
+.uka-nav-links a:hover::after,
+.uka-nav-links a.active::after {
+  width: 100%;
+}
+
+.uka-nav-links a:hover,
+.uka-nav-links a.active {
+  color: #e8b430;
+}
+
+/* ===== DROPDOWN SUBMENU (Home > About Us / Vision / Mission) ===== */
+.uka-nav-dropdown {
+  position: relative;
+}
+
+.uka-nav-dropdown-trigger {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 4px;
+}
+
+.uka-nav-dropdown-caret {
+  display: inline-flex;
+  align-items: center;
+  font-size: 13px;
+  transition: transform 0.25s ease;
+  cursor: pointer;
+}
+
+.uka-nav-dropdown.open .uka-nav-dropdown-caret,
+.uka-nav-dropdown:hover .uka-nav-dropdown-caret {
+  transform: rotate(180deg);
+}
+
+.uka-nav-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 14px);
+  left: 0;
+  min-width: 190px;
+  background: #0d1638;
+  border: 1px solid rgba(232, 180, 48, 0.15);
+  border-radius: 10px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: all 0.25s cubic-bezier(0.23, 1, 0.32, 1);
+  z-index: 1100;
+}
+
+.uka-nav-dropdown:hover .uka-nav-dropdown-menu,
+.uka-nav-dropdown.open .uka-nav-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.uka-nav-dropdown-menu a {
+  padding: 10px 14px !important;
+  border-radius: 6px;
+  border-bottom: none !important;
+  white-space: nowrap;
+}
+
+.uka-nav-dropdown-menu a::after {
+  display: none;
+}
+
+.uka-nav-dropdown-menu a:hover,
+.uka-nav-dropdown-menu a.active {
+  background: rgba(232, 180, 48, 0.12);
+  color: #e8b430;
+}
+
+.uka-navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  flex-shrink: 0;
+}
+
+/* ===== CALL BUTTON ===== */
+.uka-call {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.uka-call-icon {
+  color: #e8b430;
+  font-size: 22px;
+  animation: ring 2s infinite;
+}
+
+@keyframes ring {
+  0%, 100% { transform: rotate(0); }
+  10%, 30% { transform: rotate(-15deg); }
+  20%, 40% { transform: rotate(15deg); }
+}
+
+.uka-call-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.uka-call-number {
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.uka-call-label {
+  font-size: 11px;
+  color: #e8b430;
+}
+
+/* ===== BUTTONS ===== */
+.uka-btn-gold {
+  background: linear-gradient(135deg, #e8b430, #f5c842);
+  color: #0a1330;
+  border: none;
+  font-weight: 600;
+  font-size: 13.5px;
+  letter-spacing: 0.4px;
+  padding: 12px 22px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.3s ease;
+  font-family: "Roboto", sans-serif;
+  box-shadow: 0 4px 15px rgba(232, 180, 48, 0.3);
+}
+
+.uka-btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(232, 180, 48, 0.4);
+}
+
+.uka-navbar-admin-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.uka-btn-outline-small {
+  background: transparent;
+  color: #e7e9f2;
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  border-radius: 6px;
+  width: 38px;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.uka-btn-outline-small:hover {
+  border-color: #e8b430;
+  color: #e8b430;
+}
+
+/* ===== MOBILE TOGGLE ===== */
+.uka-navbar-toggle {
+  display: none;
+  background: none;
+  border: 1.5px solid rgba(232, 180, 48, 0.4);
+  color: #e8b430;
+  font-size: 20px;
+  border-radius: 6px;
+  width: 38px;
+  height: 38px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.uka-navbar-toggle:hover {
+  background: rgba(232, 180, 48, 0.1);
+  border-color: #e8b430;
+}
+
+/* ===== MOBILE SPECIFIC ===== */
+.uka-mobile-login-btn,
+.uka-mobile-admin-actions,
+.uka-mobile-logout-btn {
+  display: none;
+}
+
+.desktop-only {
+  display: inline-flex;
+}
+
+/* ============================================ */
+/* ===== RESPONSIVE DESIGN ===== */
+/* ============================================ */
+
+@media (max-width: 1180px) {
+  .uka-navbar {
+    position: fixed;
+  }
+
+  .uka-navbar-inner {
+    padding: 12px 20px;
+  }
+
+  /* Slightly smaller logo on tablet */
+  .uka-logo-image {
+    width: 55px !important;
+    height: 55px !important;
+    padding: 5px;
+  }
+
+  .uka-logo-title {
+    font-size: 18px;
+  }
+
+  .uka-logo-subtitle {
+    font-size: 10px;
+  }
+
+  .uka-nav-links {
+    position: fixed;
+    top: 78px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: rgba(6, 12, 41, 0.98);
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    gap: 0;
+    transition: max-height 0.35s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+  }
+
+  .uka-nav-links.open {
+    max-height: 600px;
+    padding: 10px 0;
+  }
+
+  .uka-nav-links a {
+    padding: 14px 24px;
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    white-space: normal;
+  }
+
+  .desktop-only {
+    display: none !important;
+  }
+
+  .uka-nav-dropdown {
+    width: 100%;
+  }
+
+  .uka-nav-dropdown-trigger {
+    width: 100%;
+    justify-content: space-between;
+    padding: 14px 24px !important;
+  }
+
+  .uka-nav-dropdown-caret {
+    padding: 4px;
+  }
+
+  .uka-nav-dropdown-menu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    box-shadow: none;
+    border: none;
+    background: rgba(232, 180, 48, 0.05);
+    border-radius: 0;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .uka-nav-dropdown.open .uka-nav-dropdown-menu {
+    max-height: 300px;
+  }
+
+  .uka-nav-dropdown-menu a {
+    padding: 12px 24px 12px 40px !important;
+    border-radius: 0;
+  }
+
+  .uka-mobile-login-btn {
+    display: block;
+    width: calc(100% - 48px);
+    margin: 8px 24px;
+    background: linear-gradient(135deg, #e8b430, #f5c842);
+    color: #0a1330;
+    border: none;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 14px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s ease;
+    font-family: "Roboto", sans-serif;
+    box-shadow: 0 4px 15px rgba(232, 180, 48, 0.3);
+  }
+
+  .uka-mobile-login-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(232, 180, 48, 0.4);
+  }
+
+  .uka-mobile-admin-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 8px 24px;
+  }
+
+  .uka-mobile-admin-actions .uka-mobile-login-btn {
+    width: 100%;
+    margin: 0;
+  }
+
+  .uka-mobile-logout-btn {
+    display: block;
+    width: 100%;
+    padding: 14px 20px;
+    background: transparent;
+    color: #ff6b6b;
+    border: 1.5px solid rgba(255, 107, 107, 0.3);
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s ease;
+    font-family: "Roboto", sans-serif;
+  }
+
+  .uka-mobile-logout-btn:hover {
+    background: rgba(255, 107, 107, 0.1);
+    border-color: #ff6b6b;
+  }
+
+  .uka-call {
+    display: none;
+  }
+
+  .uka-navbar-toggle {
+    display: flex;
+  }
+}
+
+/* ===== EXTRA SMALL DEVICES ===== */
+@media (max-width: 560px) {
+  .uka-navbar-inner {
+    padding: 10px 16px;
+  }
+
+  /* Smaller logo on mobile */
+  .uka-logo-image {
+    width: 48px !important;
+    height: 48px !important;
+    padding: 4px;
+    border-radius: 10px;
+  }
+
+  .uka-logo {
+    gap: 12px;
+  }
+
+  .uka-logo-subtitle {
+    display: none;
+  }
+
+  .uka-logo-title {
+    font-size: 16px;
+    letter-spacing: 0.5px;
+  }
+
+  .uka-btn-gold {
+    padding: 10px 14px;
+    font-size: 12px;
+  }
+
+  .uka-nav-links.open {
+    max-height: 500px;
+  }
+
+  .uka-nav-links a {
+    padding: 12px 20px;
+    font-size: 13px;
+  }
+}
+
+/* ===== TABLET PORTRAIT ===== */
+@media (min-width: 561px) and (max-width: 768px) {
+  .uka-logo-image {
+    width: 50px !important;
+    height: 50px !important;
+  }
+
+  .uka-logo-title {
+    font-size: 17px;
+  }
+
+  .uka-logo-subtitle {
+    font-size: 9px;
+  }
+}
+/* ===== EXTRA SMALL DEVICES ===== */
+@media (max-width: 560px) {
+
+  .uka-navbar-inner {
+    padding: 10px 16px;
+  }
+
+  /* Smaller logo on mobile */
+  .uka-logo-image {
+    width: 48px !important;
+    height: 48px !important;
+    padding: 4px;
+    border-radius: 10px;
+  }
+
+  .uka-logo {
+    gap: 10px;
+  }
+
+  /* Show Professional Learning Center on mobile */
+  .uka-logo-text {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .uka-logo-title {
+    display: block !important;
+    font-size: 20px;
+    line-height: 1.1;
+    letter-spacing: 0.5px;
+  }
+
+  .uka-logo-subtitle {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 0.9 !important;
+    font-size: 12px;
+    line-height: 1.3;
+    letter-spacing: 0.8px;
+    white-space: nowrap;
+    margin-top: 2px;
+  }
+
+  .uka-btn-gold {
+    padding: 10px 14px;
+    font-size: 12px;
+  }
+
+  .uka-nav-links.open {
+    max-height: 500px;
+  }
+
+  .uka-nav-links a {
+    padding: 12px 20px;
+    font-size: 13px;
+  }
+}

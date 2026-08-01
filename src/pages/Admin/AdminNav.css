@@ -1,0 +1,31 @@
+.uka-admin-nav {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 22px;
+  flex-wrap: wrap;
+}
+
+.uka-admin-nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 16px;
+  border-radius: 10px;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #6b7280;
+  background: #fff;
+  border: 1.5px solid #e3e6f0;
+  text-decoration: none;
+  transition: transform 0.2s ease, color 0.2s ease, background 0.2s ease;
+}
+
+.uka-admin-nav-link:hover {
+  transform: translateY(-1px);
+}
+
+.uka-admin-nav-link-active {
+  background: #101a4d;
+  border-color: #101a4d;
+  color: #fff;
+}

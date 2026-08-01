@@ -1,0 +1,98 @@
+/* src/pages/Dashboard/StudentDashboard.css */
+
+.dash-page {
+  font-family: "Roboto", "Segoe UI", sans-serif;
+  background: #f8f9fc;
+  color: #0a1330;
+  min-height: 100vh;
+  padding: 100px 0 60px;
+}
+
+.dash-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.dash-confirm-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: #fff;
+  border: 1.5px solid;
+  border-radius: 16px;
+  padding: 18px 22px;
+  margin-bottom: 28px;
+}
+.dash-confirm-icon {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.2rem;
+}
+.dash-confirm-banner strong {
+  display: block;
+  font-size: 0.98rem;
+  line-height: 1.5;
+}
+.dash-confirm-banner p {
+  margin: 4px 0 0;
+  font-size: 0.85rem;
+  color: #8a8fa3;
+}
+
+.dash-title {
+  margin: 0 0 4px;
+  font-size: 1.8rem;
+  font-weight: 800;
+}
+.dash-sub {
+  margin: 0 0 26px;
+  color: #6b7280;
+  font-size: 0.95rem;
+}
+
+.dash-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+.dash-tile {
+  background: #fff;
+  border: none;
+  border-radius: 16px;
+  padding: 26px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(10, 19, 48, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-align: left;
+  font-family: inherit;
+}
+.dash-tile:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(10, 19, 48, 0.1);
+}
+.dash-tile-icon {
+  font-size: 1.6rem;
+}
+.dash-tile-label {
+  font-weight: 700;
+  font-size: 0.98rem;
+  color: #0a1330;
+}
+.dash-tile-note {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: #b7bccb;
+}

@@ -1,0 +1,446 @@
+/* src/pages/Faculty/Faculty.css */
+.faculty-uka-section {
+  background: #0a1330;
+  padding: 70px 0 80px;
+  font-family: "Roboto", "Segoe UI", sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background decoration */
+.faculty-uka-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(232, 180, 48, 0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.faculty-uka-section::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(232, 180, 48, 0.05) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.faculty-uka-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 40px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Header */
+.faculty-uka-header {
+  text-align: center;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.faculty-uka-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(232, 180, 48, 0.15);
+  color: #e8b430;
+  padding: 8px 24px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  border: 1px solid rgba(232, 180, 48, 0.2);
+  animation: fadeInDown 0.8s ease;
+}
+
+.faculty-uka-header h2 {
+  font-size: 40px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease 0.2s forwards;
+}
+
+.faculty-uka-header p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 16px;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease 0.4s forwards;
+}
+
+/* Grid */
+.faculty-uka-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+/* Card - White background */
+.faculty-uka-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 30px 22px 25px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  border-top: 4px solid #e8b430;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.faculty-uka-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(232, 180, 48, 0.03) 0%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.faculty-uka-card.animate-in {
+  animation: facultyCardIn 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes facultyCardIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ===== ENHANCED HOVER EFFECTS ===== */
+.faculty-uka-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 16px 50px rgba(232, 180, 48, 0.25), 0 4px 20px rgba(0, 0, 0, 0.3);
+  border-top-color: #f5c842;
+}
+
+/* Light sweep animation */
+.faculty-uka-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(232, 180, 48, 0.08),
+    rgba(232, 180, 48, 0.12),
+    rgba(232, 180, 48, 0.08),
+    transparent
+  );
+  transform: skewX(-25deg);
+  transition: none;
+  pointer-events: none;
+}
+
+.faculty-uka-card:hover::after {
+  animation: lightSweep 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes lightSweep {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.faculty-uka-card:hover::before {
+  opacity: 1;
+}
+
+/* Image Wrapper - Golden ring on hover */
+.faculty-uka-image-wrapper {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  padding: 4px;
+  background: linear-gradient(135deg, #e8b430, #f5c842, #e8b430);
+  background-size: 200% 200%;
+  animation: gradientMove 3s ease infinite;
+  transition: all 0.4s ease;
+}
+
+.faculty-uka-card:hover .faculty-uka-image-wrapper {
+  box-shadow: 0 0 20px rgba(232, 180, 48, 0.4), 0 0 40px rgba(232, 180, 48, 0.2);
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.faculty-uka-photo {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #ffffff;
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Image zoom to 1.05 on hover */
+.faculty-uka-card:hover .faculty-uka-photo {
+  transform: scale(1.05);
+}
+
+/* Card Content - Dark text on white */
+.faculty-uka-card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0a1330;
+  margin-bottom: 6px;
+  transition: color 0.4s ease;
+}
+
+/* Name changes to gold on hover */
+.faculty-uka-card:hover h3 {
+  color: #e8b430;
+}
+
+.faculty-uka-subject {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #e8b430;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  padding: 4px 14px;
+  background: rgba(232, 180, 48, 0.1);
+  border-radius: 12px;
+}
+
+/* Details */
+.faculty-uka-details {
+  text-align: left;
+  padding: 12px 0 8px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.faculty-uka-qualification,
+.faculty-uka-experience,
+.faculty-uka-expertise {
+  color: #4b5468;
+  font-size: 13px;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  opacity: 0;
+  transform: translateX(-10px);
+  animation: slideInLeft 0.5s ease forwards;
+}
+
+.faculty-uka-card.animate-in .faculty-uka-qualification {
+  animation-delay: 0.3s;
+}
+
+.faculty-uka-card.animate-in .faculty-uka-experience {
+  animation-delay: 0.4s;
+}
+
+.faculty-uka-card.animate-in .faculty-uka-expertise {
+  animation-delay: 0.5s;
+}
+
+.faculty-uka-card.animate-in .faculty-uka-award {
+  animation-delay: 0.6s;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.detail-icon {
+  color: #e8b430;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.faculty-uka-award {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(135deg, rgba(232, 180, 48, 0.12), rgba(245, 200, 66, 0.08));
+  padding: 5px 12px;
+  border-radius: 12px;
+  margin-top: 6px;
+  font-size: 12px;
+  color: #e8b430;
+  font-weight: 600;
+  opacity: 0;
+  transform: scale(0.9);
+  animation: popIn 0.5s ease forwards;
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.award-icon {
+  font-size: 14px;
+  color: #e8b430;
+}
+
+/* Social Dots */
+.faculty-uka-social {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.social-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #e8b430;
+  opacity: 0.3;
+  transition: all 0.3s ease;
+}
+
+.faculty-uka-card:hover .social-dot:nth-child(1) {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+.faculty-uka-card:hover .social-dot:nth-child(2) {
+  opacity: 0.8;
+  transform: scale(1.1);
+  animation-delay: 0.1s;
+}
+
+.faculty-uka-card:hover .social-dot:nth-child(3) {
+  opacity: 0.6;
+  transform: scale(1);
+  animation-delay: 0.2s;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+  .faculty-uka-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .faculty-uka-header h2 {
+    font-size: 34px;
+  }
+}
+
+@media (max-width: 700px) {
+  .faculty-uka-container {
+    padding: 0 20px;
+  }
+
+  .faculty-uka-header h2 {
+    font-size: 28px;
+  }
+
+  .faculty-uka-header p {
+    font-size: 14px;
+  }
+
+  .faculty-uka-image-wrapper {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .faculty-uka-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .faculty-uka-card {
+    padding: 24px 18px 20px;
+  }
+
+  .faculty-uka-header h2 {
+    font-size: 24px;
+  }
+
+  .faculty-uka-image-wrapper {
+    width: 100px;
+    height: 100px;
+  }
+
+  .faculty-uka-card h3 {
+    font-size: 16px;
+  }
+
+  .faculty-uka-qualification,
+  .faculty-uka-experience,
+  .faculty-uka-expertise {
+    font-size: 12px;
+  }
+}

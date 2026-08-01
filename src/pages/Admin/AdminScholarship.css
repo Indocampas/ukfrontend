@@ -1,0 +1,523 @@
+.uka-scholarship-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.uka-scholarship-card {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(16, 26, 77, 0.07);
+  padding: 18px 20px;
+}
+
+.uka-scholarship-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.uka-scholarship-card-header h3 {
+  font-size: 16.5px;
+  color: #101a4d;
+  margin-bottom: 4px;
+}
+
+.uka-scholarship-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #6b7280;
+  flex-wrap: wrap;
+}
+
+.uka-scholarship-published-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(22, 163, 74, 0.12);
+  color: #16a34a;
+  font-weight: 700;
+  font-size: 11.5px;
+  padding: 2px 9px;
+  border-radius: 20px;
+}
+
+.uka-scholarship-card-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.uka-scholarship-details {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #eef0f8;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.uka-scholarship-files-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.uka-scholarship-files-row label,
+.uka-scholarship-files-row button {
+  cursor: pointer;
+}
+
+.uka-scholarship-students h4 {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 14px;
+  color: #101a4d;
+  margin-bottom: 10px;
+}
+
+.uka-scholarship-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+}
+
+.uka-scholarship-table th {
+  text-align: left;
+  color: #6b7280;
+  font-size: 11.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  padding: 8px 10px;
+  border-bottom: 1.5px solid #eef0f8;
+}
+
+.uka-scholarship-table td {
+  padding: 8px 10px;
+  border-bottom: 1px solid #f4f5fa;
+  color: #101a4d;
+}
+
+.uka-scholarship-score-input {
+  width: 70px;
+  border: 1.5px solid #e3e6f0;
+  border-radius: 8px;
+  padding: 5px 8px;
+  font-size: 13px;
+}
+
+.uka-admin-local-note {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  color: #8a6410;
+  background: rgba(232, 180, 48, 0.14);
+  border: 1px dashed #e8b430;
+  border-radius: 8px;
+  padding: 6px 10px;
+  margin-top: 8px;
+  width: fit-content;
+}
+
+.uka-scholarship-category-tag {
+  background: #eef0f8;
+  color: #101a4d;
+  font-weight: 700;
+  font-size: 11px;
+  padding: 2px 9px;
+  border-radius: 20px;
+}
+
+.uka-scholarship-reg-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  border: none;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 11px;
+  padding: 3px 10px;
+  cursor: pointer;
+}
+
+.uka-scholarship-reg-open {
+  background: rgba(22, 163, 74, 0.12);
+  color: #16a34a;
+}
+
+.uka-scholarship-reg-closed {
+  background: rgba(220, 38, 38, 0.1);
+  color: #dc2626;
+}
+
+.uka-scholarship-desc {
+  font-size: 13px;
+  color: #6b7280;
+  margin-top: 6px;
+  max-width: 640px;
+}
+
+/* ---------------- Modals ---------------- */
+
+.uka-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(6, 12, 41, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  z-index: 1000;
+}
+
+.uka-modal {
+  background: #fff;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 640px;
+  max-height: 86vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(6, 12, 41, 0.3);
+}
+
+.uka-template-modal {
+  max-width: 760px;
+}
+
+.uka-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px 22px;
+  border-bottom: 1px solid #eef0f8;
+}
+
+.uka-modal-header h2 {
+  font-size: 17px;
+  color: #101a4d;
+}
+
+.uka-modal-subtitle {
+  font-size: 12.5px;
+  color: #6b7280;
+  margin-top: 3px;
+}
+
+.uka-modal-close {
+  border: none;
+  background: #f4f5fa;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #101a4d;
+  flex-shrink: 0;
+}
+
+.uka-modal-body {
+  padding: 20px 22px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.uka-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 16px 22px;
+  border-top: 1px solid #eef0f8;
+}
+
+/* ---------------- Template editor ---------------- */
+
+.uka-tpl-question {
+  border: 1.5px solid #eef0f8;
+  border-radius: 12px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.uka-tpl-question-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.uka-tpl-question-number {
+  font-weight: 800;
+  color: #101a4d;
+  font-size: 14px;
+}
+
+.uka-tpl-question-head select {
+  border: 1.5px solid #e3e6f0;
+  border-radius: 8px;
+  padding: 5px 8px;
+  font-size: 12.5px;
+}
+
+.uka-tpl-icon-btn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  border-radius: 6px;
+  color: #6b7280;
+  margin-left: auto;
+}
+
+.uka-tpl-danger:hover {
+  color: #dc2626;
+  background: rgba(220, 38, 38, 0.08);
+}
+
+.uka-tpl-question-text {
+  width: 100%;
+  border: 1.5px solid #e3e6f0;
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 13.5px;
+  font-family: inherit;
+  resize: vertical;
+}
+
+.uka-tpl-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-left: 4px;
+}
+
+.uka-tpl-option-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.uka-tpl-option-key {
+  font-weight: 700;
+  color: #101a4d;
+  font-size: 13px;
+  width: 16px;
+}
+
+.uka-tpl-option-row input {
+  flex: 1;
+  border: 1.5px solid #e3e6f0;
+  border-radius: 8px;
+  padding: 6px 9px;
+  font-size: 13px;
+}
+
+.uka-tpl-correct-toggle {
+  border: 1.5px solid #e3e6f0;
+  background: #fff;
+  color: #c7cbdb;
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.uka-tpl-correct-active {
+  color: #16a34a;
+  border-color: #16a34a;
+  background: rgba(22, 163, 74, 0.1);
+}
+
+.uka-tpl-add-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  border: 1.5px dashed #e3e6f0;
+  background: transparent;
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 12.5px;
+  color: #101a4d;
+  cursor: pointer;
+  width: fit-content;
+}
+
+@media (max-width: 640px) {
+  .uka-scholarship-table {
+    font-size: 12.5px;
+  }
+
+  .uka-modal-overlay {
+    padding: 0;
+  }
+
+  .uka-modal {
+    max-height: 100vh;
+    height: 100%;
+    border-radius: 0;
+  }
+}
+/* =========================================
+   Exam Form Fields
+========================================= */
+
+.uka-exam-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.uka-exam-field > span {
+  font-size: 13px;
+  font-weight: 700;
+  color: #101a4d;
+}
+
+/* Common Input Styling */
+.uka-exam-field input {
+  width: 100%;
+  min-height: 42px;
+  box-sizing: border-box;
+  border: 1.5px solid #e3e6f0;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 14px;
+  font-family: inherit;
+  color: #101a4d;
+  background: #fafbff;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+/* Focus Effect */
+.uka-exam-field input:focus {
+  border-color: #e8b430;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(232, 180, 48, 0.12);
+}
+
+/* Placeholder */
+.uka-exam-field input::placeholder {
+  color: #9ca3af;
+}
+
+/* Duration Input */
+.uka-exam-input-wrap {
+  position: relative;
+  width: 100%;
+}
+
+.uka-exam-input-wrap input {
+  padding-right: 55px;
+}
+
+.uka-input-suffix {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 12px;
+  font-weight: 700;
+  color: #6b7280;
+  pointer-events: none;
+}
+
+/* Remove Number Input Spinner */
+.uka-exam-input-wrap input::-webkit-outer-spin-button,
+.uka-exam-input-wrap input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.uka-exam-input-wrap input[type="number"] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+/* Date and Time Input */
+.uka-exam-field input[type="date"],
+.uka-exam-field input[type="time"] {
+  cursor: pointer;
+}
+
+/* Calendar and Clock Icon */
+.uka-exam-field input[type="date"]::-webkit-calendar-picker-indicator,
+.uka-exam-field input[type="time"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .uka-exam-field input {
+    min-height: 44px;
+    font-size: 14px;
+  }
+}
+/* src/pages/Admin/AdminScholarship.css */
+
+/* Registration period display */
+.uka-scholarship-reg-period {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #6b7280;
+  background: #f8f9fc;
+  padding: 4px 10px;
+  border-radius: 6px;
+  margin: 4px 0 8px;
+}
+
+/* Small helper text for datetime inputs */
+.uka-admin-field small {
+  display: block;
+  font-size: 11px;
+  color: #9aa1b5;
+  margin-top: 4px;
+  font-weight: 400;
+}
+
+/* Make datetime inputs consistent with other inputs */
+.uka-admin-field input[type="datetime-local"] {
+  border: 1.5px solid #e3e6f0;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #101a4d;
+  background: #fafbff;
+  width: 100%;
+  transition: border-color 0.2s ease;
+}
+
+.uka-admin-field input[type="datetime-local"]:focus {
+  outline: none;
+  border-color: #e8b430;
+  background: #fff;
+}
+
+/* Responsive adjustments for registration period */
+@media (max-width: 700px) {
+  .uka-scholarship-reg-period {
+    font-size: 11px;
+    flex-wrap: wrap;
+  }
+}

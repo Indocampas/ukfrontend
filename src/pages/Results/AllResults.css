@@ -1,0 +1,389 @@
+/* pages/Results/AllResults.css */
+.all-results-page {
+  font-family: "Roboto", "Segoe UI", sans-serif;
+  background: #f8f9fc;
+  min-height: 100vh;
+  padding: 40px 0;
+  color: #0a1330;
+  padding-top: 120px;
+  overflow-x: hidden;
+}
+
+.all-results-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.sticky-back-button {
+  position: fixed;
+  top: 95px;
+  left: 24px;
+  z-index: 1000;
+  background: transparent;
+  padding: 0;
+  width: auto;
+}
+
+/* Back Button */
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #0a1330;
+  cursor: pointer;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  max-width: 200px;
+  position: relative;
+  overflow: hidden;
+}
+
+.back-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.back-button:hover::before {
+  left: 100%;
+}
+
+.back-button:hover {
+  transform: translateX(-4px);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+  background: #e8b430;
+  color: #ffffff;
+}
+
+.back-button:hover svg {
+  transform: translateX(-4px);
+}
+
+.back-button svg {
+  transition: transform 0.4s ease;
+}
+
+/* Header */
+.all-results-header {
+  text-align: center;
+  margin-bottom: 40px;
+  margin-top: 20px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.all-results-header.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.header-icon {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, #e8b430, #f5c842);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  font-size: 32px;
+  color: #ffffff;
+  animation: pulse 2s ease-in-out infinite;
+  transition: all 0.3s ease;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(232, 180, 48, 0.4);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 20px rgba(232, 180, 48, 0);
+  }
+}
+
+.page-title {
+  font-size: 42px;
+  font-weight: 800;
+  color: #0a1330;
+  margin-bottom: 8px;
+  letter-spacing: -0.5px;
+  background: linear-gradient(135deg, #0a1330, #e8b430);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.page-subtitle {
+  font-size: 18px;
+  color: #5a6488;
+}
+
+/* Results Grid */
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.results-grid.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.result-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  transform: translateY(20px) scale(0.95);
+  animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  will-change: transform, background-color, border-color;
+  /* Removed transform-style and 3D effects */
+}
+
+/* Ensure content stays above background changes */
+.result-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Remove the pseudo-element that was causing issues */
+.result-card::before {
+  display: none;
+}
+
+.result-card:nth-child(1) { animation-delay: 0.05s; }
+.result-card:nth-child(2) { animation-delay: 0.10s; }
+.result-card:nth-child(3) { animation-delay: 0.15s; }
+.result-card:nth-child(4) { animation-delay: 0.20s; }
+.result-card:nth-child(5) { animation-delay: 0.25s; }
+.result-card:nth-child(6) { animation-delay: 0.30s; }
+.result-card:nth-child(7) { animation-delay: 0.35s; }
+.result-card:nth-child(8) { animation-delay: 0.40s; }
+.result-card:nth-child(9) { animation-delay: 0.45s; }
+.result-card:nth-child(10) { animation-delay: 0.50s; }
+.result-card:nth-child(11) { animation-delay: 0.55s; }
+.result-card:nth-child(12) { animation-delay: 0.60s; }
+.result-card:nth-child(13) { animation-delay: 0.65s; }
+.result-card:nth-child(14) { animation-delay: 0.70s; }
+.result-card:nth-child(15) { animation-delay: 0.75s; }
+
+.result-rank-badge {
+  min-width: 70px;
+  height: 70px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 14px;
+  gap: 2px;
+  flex-shrink: 0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  z-index: 1;
+}
+
+.result-rank-badge span {
+  transition: transform 0.3s ease;
+}
+
+.result-card:hover .result-rank-badge span {
+  transform: scale(1.05);
+}
+
+.result-details {
+  flex: 1;
+  z-index: 1;
+  position: relative;
+}
+
+.result-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0a1330;
+  margin-bottom: 4px;
+  transition: color 0.3s ease;
+}
+
+.result-college {
+  font-size: 14px;
+  color: #5a6488;
+  margin-bottom: 6px;
+  transition: color 0.3s ease;
+}
+
+.result-meta {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.result-exam {
+  font-size: 12px;
+  color: #8e97b0;
+  background: #f0f2f7;
+  padding: 3px 12px;
+  border-radius: 12px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.result-year {
+  font-size: 12px;
+  color: #8e97b0;
+  background: #f0f2f7;
+  padding: 3px 12px;
+  border-radius: 12px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+/* No Results */
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 60px 20px;
+  color: #5a6488;
+  font-size: 18px;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .page-title {
+    font-size: 34px;
+  }
+}
+
+@media (max-width: 768px) {
+  .all-results-page {
+    padding: 20px 0;
+    padding-top: 100px;
+  }
+
+  .results-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .page-title {
+    font-size: 28px;
+  }
+
+  .header-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 26px;
+  }
+
+  .sticky-back-button {
+    top: 60px;
+    left: 16px;
+  }
+
+  .back-button {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .result-card {
+    padding: 16px;
+  }
+
+  .result-rank-badge {
+    min-width: 60px;
+    height: 60px;
+  }
+
+  .result-rank-badge span {
+    font-size: 16px !important;
+  }
+
+  .result-name {
+    font-size: 16px;
+  }
+
+  .sticky-back-button {
+    top: 50px;
+    left: 12px;
+  }
+
+  .back-button {
+    padding: 6px 14px;
+    font-size: 12px;
+  }
+
+  .all-results-page {
+    padding-top: 90px;
+  }
+
+  .page-title {
+    font-size: 24px;
+  }
+
+  .page-subtitle {
+    font-size: 14px;
+  }
+}
+
+/* Scrollbar styling for better UX */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e8b430;
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d4a020;
+}

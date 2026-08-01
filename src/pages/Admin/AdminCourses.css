@@ -1,0 +1,453 @@
+/* src/pages/Admin/AdminCourses.css */
+
+.uka-course-form-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+
+.uka-course-field-wide {
+  grid-column: span 3;
+}
+
+.uka-course-form-grid textarea {
+  border: 1.5px solid #e3e6f0;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 14px;
+  font-family: inherit;
+  color: #101a4d;
+  background: #fafbff;
+  resize: vertical;
+}
+
+.uka-course-form-preview {
+  width: 160px;
+  height: 110px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #e3e6f0;
+}
+
+.uka-course-form-preview img,
+.uka-course-form-preview video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.uka-course-add-btn {
+  grid-column: span 3;
+  justify-self: start;
+}
+
+.uka-course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 18px;
+}
+
+.uka-course-card .uka-admin-card-body {
+  gap: 10px;
+}
+
+.uka-course-media-wrap {
+  position: relative;
+  background: #0d1330;
+  aspect-ratio: 16/9;
+}
+
+.uka-course-media-wrap img,
+.uka-course-media-wrap video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: #000;
+}
+
+.uka-course-status-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 3px 9px;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.uka-course-status-active {
+  background: #16a34a;
+  color: #fff;
+}
+
+.uka-course-status-inactive {
+  background: #9ca3af;
+  color: #fff;
+}
+
+.uka-course-badges {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.uka-course-badge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 20px;
+  background: #eef0f8;
+  color: #101a4d;
+}
+
+.uka-course-badge-alt {
+  background: rgba(232, 180, 48, 0.16);
+  color: #8a6410;
+}
+
+.uka-course-quick-row {
+  display: flex;
+  gap: 10px;
+}
+
+.uka-course-quick-field {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #6b7280;
+}
+
+.uka-course-quick-field input,
+.uka-course-quick-field select {
+  border: 1.5px solid #e3e6f0;
+  border-radius: 8px;
+  padding: 7px 9px;
+  font-size: 13px;
+  color: #101a4d;
+  background: #fafbff;
+}
+
+.uka-course-expand-btn {
+  justify-content: center;
+  width: 100%;
+}
+
+.uka-course-details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: #f7f8fc;
+  border-radius: 12px;
+  padding: 14px;
+  margin-top: 2px;
+}
+
+.uka-course-details textarea {
+  border: 1.5px solid #e3e6f0;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 13.5px;
+  font-family: inherit;
+  color: #101a4d;
+  background: #fff;
+  resize: vertical;
+}
+
+.uka-course-media-btn {
+  justify-content: center;
+  width: 100%;
+  cursor: pointer;
+}
+
+.uka-video-preview {
+  aspect-ratio: 16/9;
+  width: 100%;
+  height: auto;
+}
+
+/* Admin upload placeholder styles */
+.uka-admin-upload-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: #6b7280;
+  background: #f3f4f6;
+  gap: 8px;
+}
+
+.uka-admin-upload-placeholder svg {
+  font-size: 32px;
+  opacity: 0.5;
+}
+
+.uka-admin-upload-placeholder span {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+@media (max-width: 900px) {
+  .uka-course-form-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .uka-course-field-wide,
+  .uka-course-add-btn {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .uka-course-form-grid {
+    grid-template-columns: 1fr;
+  }
+  .uka-course-field-wide,
+  .uka-course-add-btn {
+    grid-column: span 1;
+  }
+  .uka-course-quick-row {
+    flex-direction: column;
+  }
+}
+/* Course Price Field */
+.uka-price-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.uka-price-field > span {
+  font-size: 13px;
+  font-weight: 700;
+  color: #101a4d;
+}
+
+.uka-price-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.uka-rupee-symbol {
+  position: absolute;
+  left: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #101a4d;
+  pointer-events: none;
+}
+
+.uka-price-input-wrap input {
+  width: 100%;
+  border: 1.5px solid #e3e6f0;
+  border-radius: 10px;
+  padding: 10px 12px 10px 32px;
+  font-size: 14px;
+  font-family: inherit;
+  color: #101a4d;
+  background: #fafbff;
+  outline: none;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.uka-price-input-wrap input:focus {
+  border-color:black;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(232, 180, 48, 0.12);
+}
+
+.uka-price-input-wrap input::placeholder {
+  color: #9ca3af;
+}
+/* PDF Upload Styles */
+.uka-pdf-upload-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.uka-pdf-file-input {
+  padding: 8px 12px;
+  border: 2px dashed #e3e6f0;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: #fafbff;
+}
+
+.uka-pdf-file-input:hover {
+  border-color: #e8b430;
+  background: #fcf8ec;
+}
+
+.uka-pdf-file-name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: #f0f4ff;
+  border-radius: 8px;
+  font-size: 13px;
+  color: #101a4d;
+}
+
+.uka-pdf-file-name svg {
+  color: #e8b430;
+}
+
+/* PDF Preview in Course Cards */
+.uka-course-pdf-preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background: linear-gradient(135deg, #f8f9ff 0%, #eef1f8 100%);
+  padding: 20px;
+}
+
+.uka-course-pdf-preview svg {
+  color: #e8b430;
+  margin-bottom: 12px;
+}
+
+.uka-course-pdf-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: #e8b430;
+  color: white;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 12px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.uka-course-pdf-link:hover {
+  background: #d4a02a;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(232, 180, 48, 0.3);
+}
+
+/* PDF View Button in Details */
+.uka-course-pdf-view-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  justify-content: center;
+  margin-top: 4px;
+  background: #101a4d;
+  color: white;
+}
+
+.uka-course-pdf-view-btn:hover {
+  background: #1a2a6a;
+  color: white;
+}
+
+/* Ensure PDF placeholder matches other media placeholders */
+.uka-admin-upload-placeholder svg {
+  color: #9ca3af;
+}
+
+/* Make sure video and PDF previews maintain aspect ratio */
+.uka-course-media-wrap video,
+.uka-course-media-wrap .uka-course-pdf-preview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  min-height: 160px;
+}
+
+/* Responsive adjustments for PDF upload */
+@media (max-width: 600px) {
+  .uka-pdf-file-input {
+    width: 100%;
+  }
+}
+/* Course Price Field */
+.uka-price-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.uka-price-field > span {
+  font-size: 13px;
+  font-weight: 700;
+  color: #101a4d;
+}
+
+.uka-price-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.uka-rupee-symbol {
+  position: absolute;
+  left: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #101a4d;
+  pointer-events: none;
+}
+
+.uka-price-input-wrap input {
+  width: 100%;
+  border: 1.5px solid #e3e6f0;
+  border-radius: 10px;
+  padding: 10px 12px 10px 32px;
+  font-size: 14px;
+  font-family: inherit;
+  color: #101a4d;
+  background: #fafbff;
+  outline: none;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.uka-price-input-wrap input:focus {
+  border-color: black;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(232, 180, 48, 0.12);
+}
+
+.uka-price-input-wrap input::placeholder {
+  color: #9ca3af;
+}
+
+/* Remove number input arrows */
+.uka-price-input-wrap input::-webkit-outer-spin-button,
+.uka-price-input-wrap input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.uka-price-input-wrap input[type="number"] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+/* Remove number input arrows */
+.uka-price-input-wrap input::-webkit-outer-spin-button,
+.uka-price-input-wrap input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.uka-price-input-wrap input[type="number"] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}

@@ -1,0 +1,206 @@
+.admissions-panda-widget{
+    position:fixed;
+    left:20px;
+    bottom:-40px;      /* was -40px, which pushed it off-screen */
+    z-index:9999;
+    pointer-events:none;
+}
+
+/* HOME */
+
+.admissions-panda-home{
+
+    display:flex;
+    align-items:center;
+    gap:0;
+
+    animation:slideHome 4s ease forwards;
+
+    pointer-events:auto;
+
+}
+
+@keyframes slideHome{
+
+0%{
+
+transform:translateX(-120%);
+
+}
+
+100%{
+
+transform:translateX(calc(50vw - 230px));
+
+}
+
+}
+
+/* AFTER SCROLL */
+
+.admissions-panda-scroll{
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+gap:10px;
+
+pointer-events:auto;
+
+}
+
+/* IMAGE */
+
+.admissions-panda-img{
+
+width:95px;
+
+height:auto;
+
+object-fit:contain;
+
+filter:drop-shadow(0 10px 20px rgba(0,0,0,.25));
+
+animation:float 3s ease-in-out infinite;
+
+}
+
+@keyframes float{
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-8px);
+
+}
+
+}
+
+/* HOME BANNER */
+
+.admissions-panda-banner{
+
+margin-left:-20px;
+
+padding:12px 26px 12px 45px;
+
+background:linear-gradient(135deg,#ff5722,#ff7043);
+
+color:#fff;
+
+font-size:15px;
+
+font-weight:700;
+
+border:none;
+
+border-radius:40px;
+
+cursor:pointer;
+
+box-shadow:0 10px 25px rgba(255,87,34,.35);
+
+white-space:nowrap;
+
+transition:.3s;
+
+}
+
+.admissions-panda-banner:hover{
+
+transform:translateY(-2px);
+
+}
+
+/* SCROLL TOOLTIP */
+
+.admissions-panda-tooltip{
+
+background:#ff5722;
+
+color:#fff;
+
+padding:10px 18px;
+
+border-radius:30px;
+
+font-size:13px;
+
+font-weight:700;
+
+border:none;
+
+cursor:pointer;
+
+white-space:nowrap;
+
+box-shadow:0 10px 20px rgba(255,87,34,.3);
+
+transition:.3s;
+
+}
+
+.admissions-panda-tooltip:hover{
+
+transform:translateY(-2px);
+
+}
+
+@media(max-width:768px){
+
+.admissions-panda-widget{
+
+left:10px;
+
+bottom:46px;      /* was 15px, which overlapped the fixed bottom nav
+                      (0-70px). Now it clears the nav with ~16px gap. */
+
+}
+
+.admissions-panda-img{
+
+width:70px;
+
+}
+
+.admissions-panda-banner{
+
+font-size:12px;
+
+padding:8px 18px 8px 35px;
+
+}
+
+.admissions-panda-tooltip{
+
+font-size:11px;
+
+padding:8px 14px;
+
+}
+
+@keyframes slideHome{
+
+0%{
+
+transform:translateX(-120%);
+
+}
+
+100%{
+
+transform:translateX(calc(50vw - 150px));
+
+}
+
+}
+
+}

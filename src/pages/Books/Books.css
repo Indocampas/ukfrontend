@@ -1,0 +1,1200 @@
+/* =========================================================
+   UK ACADEMY - BOOKS SECTION
+   Professional Books → Category → Subject → Standard → Grid UI
+
+   Primary Navy : #0a1330
+   Primary Gold : #e8b430
+   Background   : #f0f2f8 (Light Navy)
+   Border       : #e5e7eb
+   Muted Text   : #667085
+   Font         : Roboto
+========================================================= */
+
+/* ---------- Global Books Page ---------- */
+
+.uka-books-page {
+  min-height: 100vh;
+  padding: 110px 24px 80px;
+  background: #e8ecf5; /* Light navy-blue background */
+  font-family: "Roboto", sans-serif;
+  color: #0a1330;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  position: relative;
+}
+
+/* Optional: Add a subtle gradient or pattern overlay */
+.uka-books-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(10, 19, 48, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 50%, rgba(10, 19, 48, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.uka-books-container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* =========================================================
+   HEADER / BREADCRUMB
+========================================================= */
+
+.uka-books-back {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  min-height: 42px;
+  padding: 9px 16px;
+
+  background: #ffffff;
+  border: 1px solid #d5d9e6;
+  border-radius: 10px;
+
+  color: #0a1330;
+  font-family: "Roboto", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+
+  margin-bottom: 20px;
+}
+
+.uka-books-back:hover {
+  transform: translateY(-2px);
+  background: #ffffff;
+  border-color: #c5c9d6;
+  box-shadow: 0 8px 22px rgba(10, 19, 48, 0.08);
+}
+
+.uka-books-back:active {
+  transform: translateY(0);
+}
+
+/* ---------- Breadcrumb ---------- */
+
+.uka-books-breadcrumb {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 7px;
+
+  margin-bottom: 18px;
+
+  color: #4a5670;
+  font-family: "Roboto", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.uka-books-breadcrumb button {
+  padding: 2px 0;
+
+  border: none;
+  background: transparent;
+
+  color: #4a5670;
+  font-family: "Roboto", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: color 0.2s ease;
+}
+
+.uka-books-breadcrumb button:hover {
+  color: #0a1330;
+}
+
+.uka-books-breadcrumb .current {
+  color: #0a1330;
+  font-weight: 700;
+}
+
+.uka-books-breadcrumb .sep {
+  color: #8e98b0;
+  font-size: 12px;
+}
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.uka-books-header {
+  margin-bottom: 34px;
+  animation: ukaBooksFadeDown 0.5s ease both;
+}
+
+@keyframes ukaBooksFadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.uka-books-eyebrow {
+  display: inline-flex;
+  align-items: center;
+
+  margin-bottom: 12px;
+  padding: 6px 12px;
+
+  border: 1px solid rgba(232, 180, 48, 0.2);
+  border-radius: 999px;
+
+  background: rgba(232, 180, 48, 0.1);
+
+  color: #b58210;
+  font-family: "Roboto", sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+}
+
+.uka-books-header h1 {
+  margin: 0 0 8px;
+
+  color: #0a1330;
+  font-family: "Roboto", sans-serif;
+  font-size: clamp(26px, 3vw, 34px);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+
+.uka-books-header p {
+  max-width: 680px;
+  margin: 0;
+
+  color: #4a5670;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   CATEGORY CARDS - WHITE BACKGROUND WITH GRADIENT ON HOVER
+========================================================= */
+
+.uka-cat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 22px;
+}
+
+.uka-cat-card {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  min-height: 210px;
+  padding: 28px 26px;
+
+  background: #ffffff; /* White background by default */
+  border: 1px solid #d5d9e6;
+  border-radius: 20px;
+
+  color: #0a1330; /* Dark text on white background */
+  text-align: left;
+
+  cursor: pointer;
+  overflow: hidden;
+
+  box-shadow:
+    0 10px 25px rgba(10, 19, 48, 0.08),
+    0 2px 5px rgba(10, 19, 48, 0.03);
+
+  animation: ukaBooksFadeUp 0.5s ease both;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.4s ease,
+    color 0.4s ease,
+    border-color 0.4s ease;
+}
+
+.uka-cat-card[data-color] {
+  transition: 
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.4s ease,
+    color 0.4s ease,
+    border-color 0.4s ease;
+}
+
+/* On hover - apply the gradient background */
+.uka-cat-card[data-color]:hover {
+  background: linear-gradient(135deg, var(--gradient-start, #e8b430), var(--gradient-end, #f5c842)) !important;
+  color: #ffffff !important;
+  transform: translateY(-6px);
+  border-color: transparent;
+  box-shadow:
+    0 20px 40px rgba(10, 19, 48, 0.18),
+    0 5px 10px rgba(10, 19, 48, 0.06);
+}
+
+@keyframes ukaBooksFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Decorative Circles */
+.uka-cat-card::after {
+  content: "";
+
+  position: absolute;
+  right: -45px;
+  bottom: -45px;
+
+  width: 160px;
+  height: 160px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.07);
+
+  pointer-events: none;
+}
+
+.uka-cat-card::before {
+  content: "";
+
+  position: absolute;
+  top: -50px;
+  right: 40px;
+
+  width: 100px;
+  height: 100px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.04);
+
+  pointer-events: none;
+}
+
+/* Category Icon */
+.uka-cat-icon {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 52px;
+  height: 52px;
+
+  margin-bottom: 22px;
+
+  border: 1px solid #d5d9e6;
+  border-radius: 15px;
+
+  background: #f0f2f8;
+
+  font-size: 23px;
+  color: #0a1330;
+
+  transition: all 0.4s ease;
+}
+
+.uka-cat-card[data-color]:hover .uka-cat-icon {
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+/* Category Title */
+.uka-cat-card h3 {
+  position: relative;
+  z-index: 1;
+
+  margin: 0 0 7px;
+
+  color: #0a1330;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.3;
+  transition: color 0.3s ease;
+}
+
+.uka-cat-card[data-color]:hover h3 {
+  color: #ffffff;
+}
+
+/* Category Tagline */
+.uka-cat-card p {
+  position: relative;
+  z-index: 1;
+
+  max-width: 300px;
+  margin: 0;
+
+  color: #667085;
+  font-family: "Roboto", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.6;
+  transition: color 0.3s ease;
+}
+
+.uka-cat-card[data-color]:hover p {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Category Count Badge */
+.uka-cat-count {
+  position: relative;
+  z-index: 1;
+
+  align-self: flex-start;
+
+  margin-top: 20px;
+  padding: 6px 11px;
+
+  border: 1px solid #d5d9e6;
+  border-radius: 999px;
+
+  background: #f0f2f8;
+
+  color: #0a1330;
+  font-family: "Roboto", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.uka-cat-card[data-color]:hover .uka-cat-count {
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
+
+/* =========================================================
+   SUBJECT / STANDARD TILES - WHITE BACKGROUND WITH COLOR ON HOVER
+========================================================= */
+
+.uka-tile-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 18px;
+}
+
+.uka-tile-card {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 175px;
+  padding: 25px 20px;
+
+  background: #ffffff; /* White background by default */
+  border: 1px solid #d5d9e6;
+  border-radius: 18px;
+
+  text-align: center;
+  cursor: pointer;
+
+  box-shadow: 0 4px 14px rgba(10, 19, 48, 0.035);
+
+  animation: ukaBooksFadeUp 0.45s ease both;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease,
+    background-color 0.4s ease,
+    color 0.4s ease;
+}
+
+.uka-tile-card[data-color] {
+  background-color: #ffffff;
+  transition: 
+    background-color 0.4s ease, 
+    color 0.4s ease, 
+    transform 0.25s ease, 
+    box-shadow 0.25s ease, 
+    border-color 0.25s ease;
+}
+
+.uka-tile-card[data-color]:hover {
+  background-color: var(--card-hover-color, #f0f4ff);
+  color: var(--text-hover-color, #0a1330);
+  transform: translateY(-5px);
+  border-color: var(--card-hover-color, rgba(232, 180, 48, 0.55));
+  box-shadow:
+    0 14px 30px rgba(10, 19, 48, 0.09),
+    0 0 0 3px rgba(232, 180, 48, 0.06);
+}
+
+.uka-tile-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 58px;
+  height: 58px;
+
+  margin: 0 auto 15px;
+
+  border-radius: 16px;
+
+  color: #ffffff;
+  font-size: 25px;
+
+  box-shadow: 0 8px 16px rgba(10, 19, 48, 0.12);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.uka-tile-card:hover .uka-tile-icon {
+  transform: scale(1.1);
+}
+
+.uka-tile-card h4 {
+  margin: 0 0 5px;
+
+  color: #0a1330;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.3;
+  transition: color 0.3s ease;
+}
+
+.uka-tile-card:hover h4 {
+  color: var(--text-hover-color, #0a1330);
+}
+
+.uka-tile-card span {
+  color: #667085;
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.uka-tile-card:hover span {
+  color: var(--text-hover-color, #667085);
+}
+
+.uka-tile-card.standard h4 {
+  font-size: 21px;
+}
+
+/* =========================================================
+   BOOK GRID - WHITE BACKGROUND WITH COLOR ON HOVER
+========================================================= */
+
+.uka-books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
+  gap: 24px;
+}
+
+.uka-book-card {
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  background: #ffffff; /* White background by default */
+  border: 1px solid #d5d9e6;
+  border-radius: 18px;
+
+  box-shadow: 0 5px 16px rgba(10, 19, 48, 0.04);
+
+  animation: ukaBooksFadeUp 0.45s ease both;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease,
+    background-color 0.4s ease,
+    color 0.4s ease;
+}
+
+.uka-book-card[data-color] {
+  background-color: #ffffff;
+  transition: 
+    background-color 0.4s ease, 
+    color 0.4s ease, 
+    transform 0.25s ease, 
+    box-shadow 0.25s ease, 
+    border-color 0.25s ease;
+}
+
+.uka-book-card[data-color]:hover {
+  background-color: var(--card-hover-color, #f0f4ff);
+  color: var(--text-hover-color, #0a1330);
+  transform: translateY(-6px);
+  border-color: var(--card-hover-color, #dfe2e9);
+  box-shadow:
+    0 18px 35px rgba(10, 19, 48, 0.11),
+    0 3px 8px rgba(10, 19, 48, 0.04);
+}
+
+/* Card content hover effects */
+.uka-book-card:hover .uka-book-body h4 {
+  color: var(--text-hover-color, #0a1330);
+}
+
+.uka-book-card:hover .uka-book-desc {
+  color: var(--text-hover-color, #667085);
+}
+
+.uka-book-card:hover .uka-book-price {
+  color: var(--text-hover-color, #0a1330);
+}
+
+.uka-book-card:hover .uka-book-meta span {
+  background: rgba(255, 255, 255, 0.3);
+  color: var(--text-hover-color, #344054);
+}
+
+/* ---------- Book Cover ---------- */
+
+.uka-book-cover-wrap {
+  position: relative;
+
+  width: 100%;
+  aspect-ratio: 3 / 4.2;
+
+  background: #0a1330;
+
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.uka-book-cover-wrap img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: transform 0.4s ease;
+}
+
+.uka-book-card:hover .uka-book-cover-wrap img {
+  transform: scale(1.035);
+}
+
+/* ---------- Book Type Badge ---------- */
+
+.uka-book-type-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+
+  padding: 5px 10px;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+
+  background: rgba(6, 12, 41, 0.78);
+
+  color: #f1c653;
+  font-family: "Roboto", sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+
+  backdrop-filter: blur(8px);
+}
+
+/* =========================================================
+   BOOK BODY
+========================================================= */
+
+.uka-book-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+
+  gap: 5px;
+
+  padding: 17px 17px 18px;
+}
+
+.uka-book-body h4 {
+  min-height: 40px;
+
+  margin: 0;
+
+  color: #0a1330;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.35;
+  transition: color 0.3s ease;
+}
+
+/* ---------- Book Meta ---------- */
+
+.uka-book-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+
+  margin: 5px 0 7px;
+}
+
+.uka-book-meta span {
+  padding: 4px 8px;
+
+  border-radius: 6px;
+
+  background: #f1f3f7;
+
+  color: #344054;
+  font-family: "Roboto", sans-serif;
+  font-size: 10.5px;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+/* ---------- Book Description ---------- */
+
+.uka-book-desc {
+  display: -webkit-box;
+
+  margin: 0 0 8px;
+
+  overflow: hidden;
+
+  color: #667085;
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.6;
+  transition: color 0.3s ease;
+
+  -webkit-box-orient: vertical;
+}
+
+.uka-book-price {
+  margin: 2px 0 11px;
+
+  color: #0a1330;
+  font-family: "Roboto", sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+/* =========================================================
+   BOOK ACTION BUTTONS
+========================================================= */
+
+.uka-book-actions {
+  display: flex;
+  gap: 8px;
+
+  margin-top: auto;
+}
+
+.uka-book-btn {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  min-height: 40px;
+  padding: 9px 10px;
+
+  border: none;
+  border-radius: 9px;
+
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.uka-book-btn:hover {
+  transform: translateY(-2px);
+}
+
+.uka-book-btn:active {
+  transform: translateY(0);
+}
+
+.uka-book-btn-view {
+  background: #f1f3f7;
+  color: #0a1330;
+}
+
+.uka-book-btn-view:hover {
+  background: #e9ebf0;
+}
+
+.uka-book-btn-primary {
+  background: linear-gradient(
+    135deg,
+    #e8b430 0%,
+    #d4a126 100%
+  );
+
+  color: #060c29;
+
+  box-shadow: 0 5px 12px rgba(232, 180, 48, 0.18);
+}
+
+.uka-book-btn-primary:hover {
+  box-shadow: 0 8px 18px rgba(232, 180, 48, 0.28);
+}
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.uka-books-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 280px;
+  padding: 60px 20px;
+
+  border: 1px dashed #c5c9d6;
+  border-radius: 18px;
+
+  background: #ffffff;
+
+  text-align: center;
+}
+
+.uka-books-empty h3 {
+  margin: 0 0 7px;
+
+  color: #0a1330;
+  font-family: "Roboto", sans-serif;
+  font-size: 19px;
+  font-weight: 600;
+}
+
+.uka-books-empty p {
+  margin: 0;
+
+  color: #667085;
+  font-family: "Roboto", sans-serif;
+  font-size: 13px;
+}
+
+/* =========================================================
+   BOOK DETAILS MODAL
+========================================================= */
+
+.uka-book-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  background: rgba(6, 12, 41, 0.68);
+
+  animation: ukaBooksFadeIn 0.2s ease both;
+
+  backdrop-filter: blur(5px);
+}
+
+@keyframes ukaBooksFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.uka-book-modal {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+
+  width: 100%;
+  max-width: 780px;
+  max-height: 88vh;
+
+  overflow: hidden;
+
+  background: #ffffff;
+  border-radius: 22px;
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.32),
+    0 5px 20px rgba(0, 0, 0, 0.08);
+
+  animation: ukaBookModalUp 0.25s ease both;
+}
+
+@keyframes ukaBookModalUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ---------- Modal Close ---------- */
+
+.uka-book-modal-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 5;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 36px;
+  height: 36px;
+
+  border: 1px solid rgba(10, 19, 48, 0.08);
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.92);
+
+  color: #0a1330;
+
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+
+  cursor: pointer;
+
+  box-shadow: 0 4px 12px rgba(10, 19, 48, 0.1);
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.uka-book-modal-close:hover {
+  transform: rotate(90deg);
+
+  background: #f1f3f7;
+}
+
+/* ---------- Modal Cover ---------- */
+
+.uka-book-modal-cover {
+  min-height: 100%;
+  background: #0a1330;
+}
+
+.uka-book-modal-cover img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+/* ---------- Modal Body ---------- */
+
+.uka-book-modal-body {
+  padding: 32px 30px;
+
+  overflow-y: auto;
+}
+
+.uka-book-modal-body .uka-book-meta {
+  margin-bottom: 14px;
+}
+
+.uka-book-modal-body h2 {
+  margin: 0 0 8px;
+  padding-right: 35px;
+
+  color: #0a1330;
+  font-family: "Roboto", sans-serif;
+  font-size: 23px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.uka-book-modal-info {
+  margin: 0 0 16px;
+
+  color: #667085;
+  font-family: "Roboto", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.65;
+}
+
+.uka-book-modal-info b {
+  color: #0a1330;
+  font-weight: 600;
+}
+
+.uka-book-modal-desc {
+  margin: 0 0 20px;
+
+  color: #475467;
+  font-family: "Roboto", sans-serif;
+  font-size: 13.5px;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+.uka-book-modal-price {
+  margin: 0 0 18px;
+
+  color: #0a1330;
+  font-family: "Roboto", sans-serif;
+  font-size: 23px;
+  font-weight: 600;
+}
+
+.uka-book-modal-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.uka-book-modal-actions .uka-book-btn {
+  flex: none;
+  min-width: 125px;
+  padding: 11px 20px;
+}
+
+/* =========================================================
+   RESPONSIVE DESIGN
+========================================================= */
+
+@media (max-width: 900px) {
+  .uka-books-page {
+    padding-top: 100px;
+  }
+
+  .uka-books-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .uka-book-modal {
+    grid-template-columns: 230px minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 720px) {
+  .uka-books-page {
+    padding: 95px 18px 60px;
+  }
+
+  .uka-books-header {
+    margin-bottom: 26px;
+  }
+
+  .uka-books-header h1 {
+    font-size: 27px;
+  }
+
+  .uka-books-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .uka-book-modal {
+    grid-template-columns: 1fr;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  .uka-book-modal-cover {
+    height: 280px;
+  }
+
+  .uka-book-modal-cover img {
+    object-position: center;
+  }
+
+  .uka-book-modal-body {
+    padding: 25px 22px 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .uka-books-page {
+    padding: 90px 14px 50px;
+  }
+
+  .uka-books-back {
+    min-height: 40px;
+    padding: 8px 13px;
+    font-size: 12px;
+  }
+
+  .uka-books-breadcrumb {
+    font-size: 12px;
+  }
+
+  .uka-books-header h1 {
+    font-size: 24px;
+  }
+
+  .uka-books-header p {
+    font-size: 13px;
+  }
+
+  .uka-cat-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .uka-cat-card {
+    min-height: 190px;
+    padding: 24px 22px;
+  }
+
+  .uka-tile-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .uka-tile-card {
+    min-height: 150px;
+    padding: 20px 12px;
+  }
+
+  .uka-tile-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 22px;
+  }
+
+  .uka-tile-card h4 {
+    font-size: 14px;
+  }
+
+  .uka-books-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .uka-book-cover-wrap {
+    aspect-ratio: 3 / 4;
+  }
+
+  .uka-book-modal-overlay {
+    padding: 12px;
+  }
+
+  .uka-book-modal {
+    border-radius: 18px;
+  }
+
+  .uka-book-modal-cover {
+    height: 240px;
+  }
+
+  .uka-book-modal-body {
+    padding: 22px 18px 24px;
+  }
+
+  .uka-book-modal-body h2 {
+    font-size: 20px;
+  }
+
+  .uka-book-modal-actions {
+    flex-direction: column;
+  }
+
+  .uka-book-modal-actions .uka-book-btn {
+    width: 100%;
+  }
+}
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+.uka-books-back:focus-visible,
+.uka-books-breadcrumb button:focus-visible,
+.uka-cat-card:focus-visible,
+.uka-tile-card:focus-visible,
+.uka-book-cover-wrap:focus-visible,
+.uka-book-btn:focus-visible,
+.uka-book-modal-close:focus-visible {
+  outline: 3px solid rgba(232, 180, 48, 0.5);
+  outline-offset: 3px;
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .uka-books-page *,
+  .uka-books-page *::before,
+  .uka-books-page *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

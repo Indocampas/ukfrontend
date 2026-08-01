@@ -1,0 +1,75 @@
+// src/utils/iconMap.jsx
+// Maps the icon-key strings stored in coursesData.jsx to actual react-icons
+// components, so data stays serialisable-ish while components stay declarative.
+import { FaRupeeSign } from "react-icons/fa";
+import {
+  FiVideo,
+  FiPlayCircle,
+  FiEdit3,
+  FiClipboard,
+  FiBookOpen,
+  FiCreditCard,
+  FiSmartphone,
+  FiRepeat,
+  FiDollarSign,
+  FiHome,
+  FiClock,
+  FiCalendar,
+  FiUsers,
+  FiStar,
+  FiCheckCircle,
+  FiFileText,
+  FiTrendingUp,
+  FiActivity,
+  FiAward,
+  FiDownload,
+  FiTarget,
+  FiBarChart2,
+  FiMapPin,
+  FiFlag,
+  FiKey,
+  FiUserCheck,
+  FiGrid,
+  FiLayers,
+  FiPercent,
+  FiMessageCircle,
+} from "react-icons/fi";
+
+const ICONS = {
+  FiVideo,
+  FiPlayCircle,
+  FiEdit3,
+  FiClipboard,
+  FiBookOpen,
+  FiCreditCard,
+  FiSmartphone,
+  FiRepeat,
+  FiDollarSign,
+  FaRupeeSign,
+  FiHome,
+  FiClock,
+  FiCalendar,
+  FiUsers,
+  FiStar,
+  FiCheckCircle,
+  FiFileText,
+  FiTrendingUp,
+  FiActivity,
+  FiAward,
+  FiDownload,
+  FiTarget,
+  FiBarChart2,
+  FiMapPin,
+  FiFlag,
+  FiKey,
+  FiUserCheck,
+  FiGrid,
+  FiLayers,
+  FiPercent,
+  FiMessageCircle,
+};
+
+export default function DataIcon({ name, className, style }) {
+  const Cmp = ICONS[name] || FiCheckCircle;
+  return <Cmp className={className} style={style} />;
+}

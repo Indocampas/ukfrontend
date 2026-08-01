@@ -1,0 +1,1194 @@
+/* src/pages/FacultyPrograms/FacultyPrograms.css */
+
+/* ============================================
+   FACULTY PROGRAMS - MAIN SECTION
+   ============================================ */
+
+.faculty-programs-section {
+  padding: 4rem 0 3rem;
+  position: relative;
+  background: linear-gradient(180deg, #f8fafd 0%, #ffffff 100%);
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+/* ============================================
+   BACKGROUND DECORATIONS
+   ============================================ */
+
+.faculty-bg-decoration {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.faculty-bg-circle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.04;
+}
+
+.faculty-bg-circle-1 {
+  width: 600px;
+  height: 600px;
+  top: -200px;
+  right: -150px;
+  background: #e8b430;
+}
+
+.faculty-bg-circle-2 {
+  width: 400px;
+  height: 400px;
+  bottom: 100px;
+  left: -100px;
+  background: #4CAF50;
+}
+
+.faculty-bg-circle-3 {
+  width: 300px;
+  height: 300px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #9C27B0;
+}
+
+/* ============================================
+   CONTAINER
+   ============================================ */
+
+.faculty-programs-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+
+.faculty-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  padding: 1rem 0 2rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faculty-hero.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.faculty-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(232, 180, 48, 0.12);
+  padding: 0.4rem 1rem 0.4rem 0.6rem;
+  border-radius: 50px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #e8b430;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.faculty-hero-badge-icon {
+  font-size: 0.9rem;
+}
+
+.faculty-hero-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #0a1330;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+}
+
+.faculty-hero-highlight {
+  color: #e8b430;
+  position: relative;
+}
+
+.faculty-hero-highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: rgba(232, 180, 48, 0.3);
+  border-radius: 2px;
+}
+
+.faculty-hero-description {
+  color: #4a5578;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  max-width: 90%;
+  margin-bottom: 1.5rem;
+}
+
+.faculty-hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.faculty-hero-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0.9rem 2rem;
+  background: #25D366;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.faculty-hero-btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(37, 211, 102, 0.35);
+}
+
+.faculty-hero-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.9rem 2rem;
+  background: #0a1330;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.faculty-hero-btn-secondary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(10, 19, 48, 0.25);
+}
+
+.faculty-btn-icon {
+  font-size: 1.1rem;
+}
+
+.faculty-hero-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.faculty-hero-image-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+}
+
+.faculty-hero-image {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+}
+
+.faculty-hero-image-glow {
+  position: absolute;
+  top: 10%;
+  right: -10%;
+  width: 60%;
+  height: 80%;
+  background: radial-gradient(circle, rgba(232, 180, 48, 0.15), transparent 70%);
+  border-radius: 50%;
+  z-index: 1;
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.1); opacity: 1; }
+}
+
+/* ============================================
+   STATS SECTION
+   ============================================ */
+
+.faculty-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  background: #fff;
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  margin: 2rem 0 3rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faculty-stats.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.faculty-stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.faculty-stat-number {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #0a1330;
+  letter-spacing: -0.5px;
+}
+
+.faculty-stat-label {
+  font-size: 0.85rem;
+  color: #8a94b0;
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+.faculty-stat-divider {
+  width: 1px;
+  background: #eef0f6;
+}
+
+/* ============================================
+   FEATURED PROGRAMS - HEADER
+   ============================================ */
+
+.faculty-programs-grid-wrapper {
+  margin: 3rem 0;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faculty-programs-grid-wrapper.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.faculty-programs-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 2rem;
+}
+
+.faculty-programs-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #e8b430;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.faculty-programs-tag-icon {
+  font-size: 0.8rem;
+}
+
+.faculty-programs-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0a1330;
+  margin: 0.3rem 0 0;
+}
+
+.faculty-programs-view-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.6rem 1.2rem;
+  background: none;
+  border: 2px solid #e8b430;
+  border-radius: 10px;
+  color: #e8b430;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.faculty-programs-view-all:hover {
+  background: #e8b430;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(232, 180, 48, 0.3);
+}
+
+/* ============================================
+   PROGRAM CARDS GRID
+   ============================================ */
+
+.faculty-programs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* ============================================
+   INDIVIDUAL PROGRAM CARD
+   ============================================ */
+
+.faculty-program-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 1.5rem;
+  padding-top: 3.2rem; /* Space for badge */
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  border: 1px solid #f0f2f7;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  animation: cardFadeIn 0.6s ease forwards;
+}
+
+.faculty-program-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--card-accent, #e8b430);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.faculty-program-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+}
+
+.faculty-program-card:hover::before {
+  opacity: 1;
+}
+
+@keyframes cardFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================
+   FACULTY BADGE - Premium Gold Badge
+   ============================================ */
+
+/* Badge container - positioned at top right of card */
+.faculty-program-badge-container {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 5;
+}
+
+/* Premium Gold Badge */
+.faculty-program-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  padding: 0.3rem 1rem 0.3rem 0.8rem;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #e8b430, #d4a020);
+  color: #0a1330;
+  box-shadow: 0 2px 12px rgba(232, 180, 48, 0.35);
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+}
+
+.faculty-program-badge-icon {
+  font-size: 0.65rem;
+}
+
+/* Shine animation on badge */
+.faculty-program-badge::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 35%,
+    rgba(255, 255, 255, 0.3) 50%,
+    transparent 65%
+  );
+  animation: badgeShine 3.5s ease-in-out infinite;
+}
+
+@keyframes badgeShine {
+  0% {
+    transform: translateX(-100%) rotate(45deg);
+  }
+  100% {
+    transform: translateX(100%) rotate(45deg);
+  }
+}
+
+/* Hover effect */
+.faculty-program-badge:hover {
+  transform: scale(1.08);
+  box-shadow: 0 4px 25px rgba(232, 180, 48, 0.5);
+}
+
+/* Alternative Minimal Faculty Badge */
+.faculty-program-badge-minimal {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.55rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  padding: 0.25rem 1rem;
+  border-radius: 50px;
+  background: rgba(232, 180, 48, 0.12);
+  color: #e8b430;
+  border: 1.5px solid rgba(232, 180, 48, 0.2);
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.faculty-program-badge-minimal:hover {
+  background: rgba(232, 180, 48, 0.2);
+  border-color: #e8b430;
+  transform: scale(1.05);
+}
+
+/* Alternative Dark Badge */
+.faculty-program-badge-dark {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.55rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  padding: 0.25rem 1rem 0.25rem 0.8rem;
+  border-radius: 50px;
+  background: #0a1330;
+  color: #e8b430;
+  border: 1px solid rgba(232, 180, 48, 0.2);
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.faculty-program-badge-dark:hover {
+  background: #1a2a4a;
+  border-color: #e8b430;
+  transform: scale(1.05);
+  box-shadow: 0 4px 16px rgba(232, 180, 48, 0.2);
+}
+
+/* ============================================
+   CARD TOP LAYOUT
+   ============================================ */
+
+.faculty-program-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+  gap: 0.5rem;
+}
+
+.faculty-program-icon-wrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.faculty-program-icon {
+  font-size: 1.4rem;
+}
+
+.faculty-program-level {
+  font-size: 0.6rem;
+  font-weight: 700;
+  padding: 0.25rem 0.75rem;
+  border-radius: 50px;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  flex-shrink: 0;
+}
+
+/* ============================================
+   CARD CONTENT
+   ============================================ */
+
+.faculty-program-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0a1330;
+  margin: 0 0 0.3rem;
+  line-height: 1.3;
+}
+
+.faculty-program-title::after {
+  display: none;
+  content: none;
+}
+
+.faculty-program-target {
+  font-size: 0.8rem;
+  color: #8a94b0;
+  font-weight: 500;
+  margin: 0 0 0.5rem;
+}
+
+.faculty-program-description {
+  font-size: 0.9rem;
+  color: #4a5578;
+  line-height: 1.6;
+  margin: 0 0 0.75rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ============================================
+   FEATURES
+   ============================================ */
+
+.faculty-program-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 0.75rem;
+}
+
+.faculty-program-feature {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.75rem;
+  color: #2d3748;
+  background: #f8f9fc;
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+}
+
+.faculty-program-feature-icon {
+  font-size: 0.7rem;
+  flex-shrink: 0;
+}
+
+/* ============================================
+   CARD FOOTER
+   ============================================ */
+
+.faculty-program-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0.75rem;
+  border-top: 1px solid #f0f2f7;
+  margin-top: 0.5rem;
+}
+
+.faculty-program-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.faculty-program-duration {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.75rem;
+  color: #8a94b0;
+}
+
+.faculty-program-meta-icon {
+  font-size: 0.7rem;
+}
+
+.faculty-program-fee {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.faculty-program-enroll {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.5rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.faculty-program-enroll:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.faculty-program-enroll-icon {
+  font-size: 0.7rem;
+  transition: transform 0.3s ease;
+}
+
+.faculty-program-enroll:hover .faculty-program-enroll-icon {
+  transform: translateX(4px);
+}
+
+/* ============================================
+   WHY CHOOSE SECTION
+   ============================================ */
+
+.faculty-why-section {
+  padding: 3rem 0;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faculty-why-section.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.faculty-why-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.faculty-why-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #e8b430;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.faculty-why-header h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0a1330;
+  margin: 0.3rem 0 0;
+}
+
+.faculty-why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.faculty-why-card {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+}
+
+.faculty-why-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+}
+
+.faculty-why-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin: 0 auto 0.75rem;
+}
+
+.faculty-why-card h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0a1330;
+  margin: 0 0 0.4rem;
+}
+
+.faculty-why-card p {
+  font-size: 0.85rem;
+  color: #4a5578;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ============================================
+   CTA SECTION
+   ============================================ */
+
+.faculty-cta-section {
+  margin-top: 2rem;
+  background: linear-gradient(135deg, #0a1330 0%, #1a2a4a 100%);
+  border-radius: 20px;
+  padding: 3rem 3.5rem;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faculty-cta-section.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.faculty-cta-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.faculty-cta-text {
+  flex: 1;
+}
+
+.faculty-cta-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background: rgba(232, 180, 48, 0.15);
+  border-radius: 50px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #e8b430;
+  letter-spacing: 0.3px;
+  margin-bottom: 0.5rem;
+}
+
+.faculty-cta-text h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 0.5rem;
+}
+
+.faculty-cta-text p {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+  max-width: 80%;
+  margin: 0;
+}
+
+.faculty-cta-actions {
+  display: flex;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+.faculty-cta-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.8rem 1.8rem;
+  background: #25D366;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.faculty-cta-btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(37, 211, 102, 0.35);
+}
+
+.faculty-cta-btn-secondary {
+  padding: 0.8rem 1.8rem;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.faculty-cta-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px);
+}
+
+.faculty-cta-icon {
+  font-size: 1.1rem;
+}
+
+.faculty-cta-decoration {
+  position: absolute;
+  bottom: -50%;
+  right: -10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(232, 180, 48, 0.08), transparent 70%);
+  border-radius: 50%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+/* Tablet and smaller laptops */
+@media (max-width: 1024px) {
+  .faculty-hero {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .faculty-hero-right {
+    order: -1;
+  }
+
+  .faculty-hero-image-wrapper {
+    max-width: 380px;
+  }
+
+  .faculty-hero-title {
+    font-size: 2.2rem;
+  }
+
+  .faculty-hero-description {
+    max-width: 100%;
+  }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  .faculty-programs-section {
+    padding: 2rem 0;
+  }
+
+  .faculty-programs-container {
+    padding: 0 1rem;
+  }
+
+  .faculty-hero-title {
+    font-size: 1.8rem;
+  }
+
+  .faculty-hero-actions {
+    flex-direction: column;
+  }
+
+  .faculty-hero-btn-primary,
+  .faculty-hero-btn-secondary {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .faculty-stats {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1.5rem;
+    gap: 1rem;
+  }
+
+  .faculty-stat-divider:nth-child(2),
+  .faculty-stat-divider:nth-child(4) {
+    display: none;
+  }
+
+  .faculty-stat-number {
+    font-size: 1.8rem;
+  }
+
+  .faculty-programs-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .faculty-programs-title {
+    font-size: 1.5rem;
+  }
+
+  .faculty-programs-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .faculty-cta-section {
+    padding: 2rem 1.5rem;
+  }
+
+  .faculty-cta-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .faculty-cta-text p {
+    max-width: 100%;
+  }
+
+  .faculty-cta-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .faculty-cta-btn-primary,
+  .faculty-cta-btn-secondary {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .faculty-why-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .faculty-program-card {
+    padding: 1.2rem;
+    padding-top: 2.8rem;
+  }
+
+  .faculty-program-badge {
+    font-size: 0.5rem;
+    padding: 0.2rem 0.7rem 0.2rem 0.6rem;
+  }
+
+  .faculty-program-badge-icon {
+    font-size: 0.5rem;
+  }
+
+  .faculty-program-card-top {
+    flex-wrap: wrap;
+  }
+}
+
+/* Mobile Phones */
+@media (max-width: 480px) {
+  .faculty-hero-title {
+    font-size: 1.5rem;
+  }
+
+  .faculty-hero-description {
+    font-size: 0.95rem;
+  }
+
+  .faculty-stats {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    padding: 1rem;
+  }
+
+  .faculty-stat-number {
+    font-size: 1.4rem;
+  }
+
+  .faculty-stat-label {
+    font-size: 0.7rem;
+  }
+
+  .faculty-programs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .faculty-why-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .faculty-programs-title {
+    font-size: 1.3rem;
+  }
+
+  .faculty-cta-text h2 {
+    font-size: 1.4rem;
+  }
+
+  .faculty-program-card {
+    padding: 1rem;
+    padding-top: 2.5rem;
+  }
+
+  .faculty-program-badge {
+    font-size: 0.45rem;
+    padding: 0.15rem 0.6rem 0.15rem 0.5rem;
+    letter-spacing: 0.5px;
+  }
+
+  .faculty-program-badge-icon {
+    font-size: 0.45rem;
+  }
+
+  .faculty-program-title {
+    font-size: 1rem;
+  }
+
+  .faculty-program-description {
+    font-size: 0.85rem;
+  }
+
+  .faculty-program-feature {
+    font-size: 0.7rem;
+    padding: 0.15rem 0.5rem;
+  }
+
+  .faculty-program-fee {
+    font-size: 0.9rem;
+  }
+
+  .faculty-program-enroll {
+    font-size: 0.7rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .faculty-hero-image-wrapper {
+    max-width: 280px;
+  }
+
+  .faculty-why-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .faculty-why-card {
+    padding: 1.2rem;
+  }
+
+  .faculty-why-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 1.2rem;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 360px) {
+  .faculty-programs-container {
+    padding: 0 0.5rem;
+  }
+
+  .faculty-hero-title {
+    font-size: 1.2rem;
+  }
+
+  .faculty-stats {
+    grid-template-columns: 1fr 1fr;
+    padding: 0.75rem;
+    gap: 0.3rem;
+  }
+
+  .faculty-stat-number {
+    font-size: 1.2rem;
+  }
+
+  .faculty-stat-label {
+    font-size: 0.6rem;
+  }
+
+  .faculty-program-card {
+    padding: 0.8rem;
+    padding-top: 2.2rem;
+  }
+
+  .faculty-program-badge {
+    font-size: 0.4rem;
+    padding: 0.1rem 0.5rem 0.1rem 0.4rem;
+    letter-spacing: 0.3px;
+  }
+
+  .faculty-program-badge-icon {
+    font-size: 0.4rem;
+  }
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+
+@media print {
+  .faculty-programs-section {
+    padding: 1rem 0;
+    background: #fff;
+  }
+
+  .faculty-bg-decoration {
+    display: none;
+  }
+
+  .faculty-hero-btn-primary,
+  .faculty-hero-btn-secondary,
+  .faculty-programs-view-all,
+  .faculty-program-enroll,
+  .faculty-cta-btn-primary,
+  .faculty-cta-btn-secondary {
+    display: none;
+  }
+
+  .faculty-program-card {
+    break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
+
+  .faculty-hero-image-glow {
+    display: none;
+  }
+
+  .faculty-cta-section {
+    background: #0a1330 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}

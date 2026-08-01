@@ -1,0 +1,153 @@
+.uka-admin-answerkey-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 18px 20px;
+  box-shadow: 0 8px 20px rgba(16, 26, 77, 0.07);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.uka-admin-answerkey-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+/* File upload styles (shared across admin modules) */
+.uka-admin-file-upload-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.uka-admin-file-upload-wrapper input[type="text"] {
+  flex: 1;
+}
+
+.uka-admin-file-upload-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.uka-admin-upload-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: #eef0f8;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #101a4d;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.uka-admin-upload-label:hover {
+  background: #dde0ee;
+}
+
+.uka-admin-upload-label.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.uka-admin-upload-progress {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 6px;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.uka-admin-upload-progress progress {
+  flex: 1;
+  height: 6px;
+  border-radius: 4px;
+  background: #eef0f8;
+}
+
+.uka-admin-upload-progress progress::-webkit-progress-bar {
+  background: #eef0f8;
+  border-radius: 4px;
+}
+
+.uka-admin-upload-progress progress::-webkit-progress-value {
+  background: #e8b430;
+  border-radius: 4px;
+}
+
+.uka-admin-upload-success {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+  font-size: 13px;
+  color: #22c55e;
+}
+
+.spinning {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+.uka-admin-icon-btn.small {
+  padding: 4px;
+  font-size: 14px;
+}
+.uka-admin-answerkey-header h3 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #101a4d;
+}
+
+.uka-admin-answerkey-meta {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.uka-admin-answerkey-tag {
+  font-size: 11px;
+  font-weight: 600;
+  background: #eef0f8;
+  color: #101a4d;
+  padding: 2px 10px;
+  border-radius: 20px;
+}
+
+.uka-admin-answerkey-desc {
+  font-size: 13px;
+  color: #6b7280;
+  line-height: 1.5;
+}
+
+.uka-admin-answerkey-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #e8b430;
+  font-weight: 600;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.uka-admin-answerkey-link:hover {
+  text-decoration: underline;
+}
+
+.uka-admin-answerkey-actions {
+  display: flex;
+  gap: 8px;
+  border-top: 1px solid #eef0f8;
+  padding-top: 12px;
+}

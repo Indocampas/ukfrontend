@@ -1,0 +1,459 @@
+.uka-admin-page {
+  min-height: 100vh;
+  background: #f4f5fa;
+  padding: 110px 24px 60px;
+  font-family: "Roboto", "Segoe UI", sans-serif;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.uka-admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 28px;
+  animation: ukaAdminFadeDown 0.5s ease;
+}
+
+@keyframes ukaAdminFadeDown {
+  from { opacity: 0; transform: translateY(-14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.uka-admin-header-left h1 {
+  font-size: 26px;
+  font-weight: 800;
+  color: #101a4d;
+  margin-bottom: 4px;
+}
+
+.uka-admin-header-left p {
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.uka-admin-header-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.uka-admin-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  border: none;
+  border-radius: 10px;
+  padding: 11px 18px;
+  font-weight: 700;
+  font-size: 13.5px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+.uka-admin-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+.uka-admin-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.uka-admin-btn-ghost {
+  background: #fff;
+  color: #101a4d;
+  border: 1.5px solid #e3e6f0;
+}
+
+.uka-admin-btn-gold {
+  background: linear-gradient(135deg, #e8b430, #c99420);
+  color: #060c29;
+  box-shadow: 0 8px 18px rgba(232, 180, 48, 0.3);
+}
+
+.uka-admin-btn-small {
+  padding: 8px 12px;
+  font-size: 12.5px;
+  background: #eef0f8;
+  color: #101a4d;
+}
+
+.uka-admin-btn-danger {
+  background: rgba(239, 68, 68, 0.1);
+  color: #dc2626;
+}
+
+.uka-admin-upload-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 26px;
+  box-shadow: 0 10px 30px rgba(16, 26, 77, 0.06);
+  margin-bottom: 32px;
+  animation: ukaAdminFadeUp 0.55s ease 0.05s both;
+}
+
+@keyframes ukaAdminFadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.uka-admin-upload-card h2 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 18px;
+  color: #101a4d;
+  margin-bottom: 20px;
+}
+
+.uka-admin-upload-grid {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 24px;
+}
+
+.uka-admin-upload-preview {
+  width: 220px;
+  height: 160px;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #f4f5fa;
+  border: 2px dashed #d9deee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.uka-admin-upload-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.uka-admin-upload-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: #9aa1b5;
+  font-size: 13px;
+}
+
+.uka-admin-upload-placeholder svg {
+  font-size: 28px;
+}
+
+.uka-admin-upload-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.uka-admin-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #101a4d;
+}
+
+.uka-admin-field input[type="text"],
+.uka-admin-field select {
+  border: 1.5px solid #e3e6f0;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #101a4d;
+  background: #fafbff;
+}
+
+.uka-admin-field input[type="file"] {
+  font-size: 13px;
+}
+
+.uka-admin-gallery-section {
+  animation: ukaAdminFadeUp 0.6s ease 0.1s both;
+}
+
+.uka-admin-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.uka-admin-toolbar h2 {
+  font-size: 18px;
+  color: #101a4d;
+}
+
+.uka-admin-toolbar-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.uka-admin-toolbar-actions select {
+  border: 1.5px solid #e3e6f0;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 13.5px;
+  color: #101a4d;
+  background: #fff;
+}
+
+.uka-admin-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 18px;
+}
+
+.uka-admin-card {
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(16, 26, 77, 0.07);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  animation: ukaAdminCardIn 0.4s ease both;
+}
+
+@keyframes ukaAdminCardIn {
+  from { opacity: 0; transform: scale(0.94); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.uka-admin-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px rgba(16, 26, 77, 0.14);
+}
+
+.uka-admin-card-image-wrap {
+  position: relative;
+  width: 100%;
+  height: 140px;
+}
+
+.uka-admin-card-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.uka-admin-main-badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: #e8b430;
+  color: #060c29;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+.uka-admin-card-body {
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.uka-admin-card-title {
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 6px 8px;
+  font-weight: 700;
+  font-size: 14px;
+  color: #101a4d;
+  background: #f7f8fc;
+}
+
+.uka-admin-card-title:focus {
+  border-color: #e8b430;
+  outline: none;
+  background: #fff;
+}
+
+.uka-admin-card-category {
+  border: 1px solid #e3e6f0;
+  border-radius: 8px;
+  padding: 6px 8px;
+  font-size: 12.5px;
+  color: #4b5563;
+}
+
+.uka-admin-card-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.uka-admin-card-actions label {
+  cursor: pointer;
+}
+
+.uka-admin-empty {
+  color: #9aa1b5;
+  font-size: 14px;
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 30px;
+}
+
+.uka-admin-last-saved {
+  margin-top: 24px;
+  text-align: right;
+  font-size: 12px;
+  color: #9aa1b5;
+}
+
+/* ---------------------------------------------------------------
+   Shared "add / edit" form card
+   Used by AdminPYQ, AdminSyllabus, AdminExamDate, AdminAnswerKey,
+   AdminFaculty (and any other admin page with an inline form).
+--------------------------------------------------------------- */
+.uka-admin-form-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 26px;
+  box-shadow: 0 10px 30px rgba(16, 26, 77, 0.06);
+  margin-bottom: 28px;
+  animation: ukaAdminFadeUp 0.55s ease 0.05s both;
+}
+
+.uka-admin-form-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.uka-admin-form-header h2 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 18px;
+  color: #101a4d;
+}
+
+.uka-admin-form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.uka-admin-fields-col {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.uka-admin-field-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+.uka-admin-field-row.two {
+  grid-template-columns: 1fr 1fr;
+}
+
+.uka-admin-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #101a4d;
+  cursor: pointer;
+}
+
+.uka-admin-checkbox input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #e8b430;
+  cursor: pointer;
+}
+
+.uka-admin-form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid #eef0f8;
+}
+
+/* Small square icon button (edit / publish-toggle / delete) */
+.uka-admin-icon-btn {
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid #e3e6f0;
+  border-radius: 8px;
+  background: #fff;
+  color: #101a4d;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.uka-admin-icon-btn:hover {
+  background: #f4f5fa;
+}
+
+.uka-admin-icon-btn.danger {
+  color: #dc2626;
+  border-color: rgba(239, 68, 68, 0.25);
+}
+
+.uka-admin-icon-btn.danger:hover {
+  background: rgba(239, 68, 68, 0.08);
+}
+
+/* Published / Draft status badge */
+.uka-admin-status-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.uka-admin-status-badge.published {
+  background: rgba(34, 197, 94, 0.12);
+  color: #15803d;
+}
+
+.uka-admin-status-badge.draft {
+  background: rgba(156, 163, 175, 0.18);
+  color: #6b7280;
+}
+
+@media (max-width: 640px) {
+  .uka-admin-upload-grid {
+    grid-template-columns: 1fr;
+  }
+  .uka-admin-upload-preview {
+    width: 100%;
+  }
+  .uka-admin-header {
+    flex-direction: column;
+  }
+  .uka-admin-field-row.two {
+    grid-template-columns: 1fr;
+  }
+  .uka-admin-form-actions {
+    flex-direction: column;
+  }
+}

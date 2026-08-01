@@ -1,0 +1,348 @@
+/* src/pages/Courses/shared/ClassCourseCatalog.css */
+/* Class-wise (6th-12th) fee-card catalog used by the new top-level Courses
+   categories: NEET & JEE Foundation (Individual / Schools) and
+   Foundation (NTSE / Olympiad). Matches the site's navy (#0A1330) / gold
+   (#E8B430) design language and Roboto typography. */
+
+.ccc-page {
+  font-family: "Roboto", "Segoe UI", sans-serif;
+  background: #f8f9fc;
+  color: #0a1330;
+  min-height: 70vh;
+  padding: 40px 0 80px;
+}
+
+.ccc-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ===== BACK LINK ===== */
+.ccc-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 60px;
+  background: none;
+  border: none;
+  color: #5a6488;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 8px 4px;
+  margin-bottom: 20px;
+  font-family: inherit;
+  transition: color 0.25s ease;
+}
+
+.ccc-back:hover {
+  color: var(--ccc-accent, #e8b430);
+}
+
+/* ===== HEADER ===== */
+.ccc-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.ccc-tag {
+  display: inline-block;
+  background: color-mix(in srgb, var(--ccc-accent, #e8b430) 12%, transparent);
+  color: var(--ccc-accent, #e8b430);
+  padding: 6px 20px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  border: 1px solid color-mix(in srgb, var(--ccc-accent, #e8b430) 25%, transparent);
+}
+
+.ccc-title {
+  font-size: 34px;
+  font-weight: 800;
+  color: #0a1330;
+  margin: 0 0 10px;
+  letter-spacing: -0.5px;
+}
+
+.ccc-tagline {
+  font-size: 15px;
+  color: #5a6488;
+  max-width: 680px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ===== MODE SWITCH (Classroom / Online) ===== */
+.ccc-mode-switch {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+
+.ccc-mode-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  border: 1.5px solid #e5e8f0;
+  color: #5a6488;
+  padding: 12px 26px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.25s ease;
+}
+
+.ccc-mode-btn:hover {
+  border-color: var(--ccc-accent, #e8b430);
+  color: #0a1330;
+}
+
+.ccc-mode-btn.is-active {
+  background: var(--ccc-accent, #e8b430);
+  border-color: var(--ccc-accent, #e8b430);
+  color: #ffffff;
+  box-shadow: 0 6px 18px color-mix(in srgb, var(--ccc-accent, #e8b430) 35%, transparent);
+}
+
+/* ===== ONLINE TYPE SWITCH (Recorded / Live) ===== */
+.ccc-online-switch {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.ccc-online-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #f0f2f7;
+  border: none;
+  color: #5a6488;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.25s ease;
+}
+
+.ccc-online-btn.is-active {
+  background: #0a1330;
+  color: #ffffff;
+}
+
+/* ===== GRID ===== */
+.ccc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 22px;
+  margin-bottom: 28px;
+}
+
+/* ===== CARD ===== */
+.ccc-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  border-top: 4px solid var(--ccc-accent, #e8b430);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.35s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.35s ease;
+}
+
+.ccc-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
+}
+
+.ccc-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.ccc-class-badge {
+  background: var(--ccc-accent, #e8b430);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 20px;
+  letter-spacing: 0.4px;
+}
+
+.ccc-mode-badge {
+  font-size: 11px;
+  font-weight: 700;
+  color: #0a1330;
+  background: #f0f2f7;
+  padding: 4px 12px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.ccc-mode-badge-online {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(10, 19, 48, 0.06);
+  color: #0a1330;
+}
+
+.ccc-card-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: #0a1330;
+  margin: 0 0 6px;
+  line-height: 1.3;
+}
+
+.ccc-card-desc {
+  font-size: 12.5px;
+  color: #5a6488;
+  line-height: 1.6;
+  margin: 0 0 16px;
+  flex: 1;
+}
+
+/* ===== FEE TABLE ===== */
+.ccc-fee-table {
+  background: #f8f9fc;
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-bottom: 16px;
+  border: 1px solid #eef0f5;
+}
+
+.ccc-fee-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+  font-size: 12.5px;
+  color: #5a6488;
+  border-bottom: 1px dashed #e5e8f0;
+}
+
+.ccc-fee-row:last-child {
+  border-bottom: none;
+}
+
+.ccc-fee-row strong {
+  color: #0a1330;
+  font-weight: 700;
+}
+
+.ccc-fee-row-label-only {
+  justify-content: flex-start;
+  gap: 8px;
+}
+
+.ccc-fee-row-label-only span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ccc-fee-row-label-only span::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--ccc-accent, #e8b430);
+  flex-shrink: 0;
+}
+
+.ccc-fee-total {
+  margin-top: 4px;
+  padding-top: 10px;
+  border-top: 1.5px solid #e5e8f0;
+  font-weight: 700;
+  color: #0a1330;
+}
+
+.ccc-fee-total span {
+  font-size: 13px;
+  font-weight: 800;
+  color: #0a1330;
+}
+
+.ccc-fee-total strong {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  color: var(--ccc-accent, #e8b430);
+  font-size: 16px;
+}
+
+/* ===== ENROLL BUTTON ===== */
+.ccc-enroll-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--ccc-accent, #e8b430);
+  color: #ffffff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 13.5px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  margin-top: auto;
+}
+
+.ccc-enroll-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px color-mix(in srgb, var(--ccc-accent, #e8b430) 40%, transparent);
+}
+
+/* ===== NOTE ===== */
+.ccc-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-align: center;
+  font-size: 13px;
+  color: #5a6488;
+  background: #ffffff;
+  border: 1px solid #eef0f5;
+  border-radius: 10px;
+  padding: 14px 18px;
+}
+
+.ccc-note svg {
+  color: var(--ccc-accent, #e8b430);
+  flex-shrink: 0;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .ccc-title {
+    font-size: 26px;
+  }
+  .ccc-grid {
+    grid-template-columns: 1fr;
+  }
+  .ccc-mode-btn {
+    padding: 10px 18px;
+    font-size: 13px;
+  }
+}
