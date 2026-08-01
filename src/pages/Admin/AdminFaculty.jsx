@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import { FiPlus, FiEdit2, FiTrash2, FiX, FiSave, FiUpload, FiUser, FiMail, FiBookOpen } from "react-icons/fi";
+import { FiPlus, FiEdit2, FiTrash2, FiX, FiSave, FiUpload, FiUser, FiMail, FiBookOpen, FiArrowUp, FiArrowDown, FiChevronsUp } from "react-icons/fi";
 import { useFaculty } from "../../context/FacultyContext";
 import AdminNav from "./AdminNav";
 import "./AdminGallery.css";
@@ -25,11 +25,12 @@ const EMPTY_FORM = {
 };
 
 export default function AdminFaculty() {
-  const { faculty, addFaculty, updateFaculty, deleteFaculty } = useFaculty();
+  const { faculty, addFaculty, updateFaculty, deleteFaculty, reorderFaculty } = useFaculty();
   const [showForm, setShowForm] = useState(false);
   const [editingId, setEditingId] = useState(null);
   const [form, setForm] = useState(EMPTY_FORM);
   const [imagePreview, setImagePreview] = useState(null);
+  const [reordering, setReordering] = useState(false);
   const fileInputRef = useRef(null);
 
   const resetForm = () => {
@@ -88,13 +89,48 @@ export default function AdminFaculty() {
     }
   };
 
+  // --- Reordering (drag-free, button based: move up / move down / move to top) ---
+  const persistOrder = async (newList) => {
+    try {
+      setReordering(true);
+      await reorderFaculty(newList);
+    } catch (err) {
+      console.error("Error reordering faculty:", err);
+      window.alert("Failed to save the new order. Please try again.");
+    } finally {
+      setReordering(false);
+    }
+  };
+
+  const moveUp = (index) => {
+    if (index === 0) return;
+    const newList = [...faculty];
+    [newList[index - 1], newList[index]] = [newList[index], newList[index - 1]];
+    persistOrder(newList);
+  };
+
+  const moveDown = (index) => {
+    if (index === faculty.length - 1) return;
+    const newList = [...faculty];
+    [newList[index + 1], newList[index]] = [newList[index], newList[index + 1]];
+    persistOrder(newList);
+  };
+
+  const moveToTop = (index) => {
+    if (index === 0) return;
+    const newList = [...faculty];
+    const [member] = newList.splice(index, 1);
+    newList.unshift(member);
+    persistOrder(newList);
+  };
+
   return (
     <div className="uka-admin-page">
       <AdminNav />
       <header className="uka-admin-header">
         <div>
           <h1>Faculty Management</h1>
-          <p>Add, edit and manage faculty members displayed on the website.</p>
+          <p>Add, edit and manage faculty members displayed on the website. Use the arrows on each card to change the order they appear in on the homepage.</p>
         </div>
         <button className="uka-admin-btn uka-admin-btn-gold" onClick={openAddForm}>
           <FiPlus /> Add Faculty Member
@@ -179,7 +215,7 @@ export default function AdminFaculty() {
       )}
 
       <div className="uka-admin-grid">
-        {faculty.map((member) => (
+        {faculty.map((member, index) => (
           <div className="uka-admin-faculty-card" key={member.id}>
             <div className="uka-admin-faculty-image">
               {member.image ? (
@@ -202,6 +238,30 @@ export default function AdminFaculty() {
               {member.experience && <p className="uka-admin-faculty-experience">{member.experience} experience</p>}
             </div>
             <div className="uka-admin-faculty-actions">
+              <button
+                className="uka-admin-icon-btn"
+                onClick={() => moveUp(index)}
+                disabled={index === 0 || reordering}
+                title="Move up"
+              >
+                <FiArrowUp />
+              </button>
+              <button
+                className="uka-admin-icon-btn"
+                onClick={() => moveDown(index)}
+                disabled={index === faculty.length - 1 || reordering}
+                title="Move down"
+              >
+                <FiArrowDown />
+              </button>
+              <button
+                className="uka-admin-icon-btn"
+                onClick={() => moveToTop(index)}
+                disabled={index === 0 || reordering}
+                title="Move to front"
+              >
+                <FiChevronsUp />
+              </button>
               <button className="uka-admin-icon-btn" onClick={() => openEditForm(member)} title="Edit">
                 <FiEdit2 />
               </button>
